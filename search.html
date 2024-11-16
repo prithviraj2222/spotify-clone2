@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="./assets/spotify.png" rel="icon" type="image/x-icon">
+  <title>Spotify - Web Player: Music for everyone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalnia&family=Montserrat:wght@300;400;500;600;700&family=Poppins&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="main">
+     <div class="sidebar">
+          <div class="nav">
+               <div class="nav-option" style="opacity: 1;">
+                    <i class="fa-brands fa-spotify logo"></i><a href="#" class="name">Spotify</a><sup><i class="fa-regular fa-registered reg"></i></sup>
+               </div>
+               <div class="nav-option"  style="opacity: 1;">
+                    <a href="" class="home-page-btn">
+                         <i class="fa-solid fa-house"></i>
+                         <a href="index.html">Home</a>
+                    </a>
+               </div>
+               <div class="nav-option">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="#">Search</a>
+               </div>
+           </div>
+           <div class="library">
+               <div class="option">
+                <div class="lib-option nav-option">
+                     <img src="./assets/library_icon.png">
+                    <a href="#">Your Liabrary</a>
+                </div>
+                <div class="icons">
+                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+               </div>
+               <div class="boxes">
+                <div class="box">
+                    <p class="para1">Create your first playlist</p>
+                    <p class="para2">It's easy, we'll help you</p>
+                    <button class="badge">Create playlist</button>
+                </div>
+                <div class="box">
+                    <p class="para1">Let's find some podcasts to follow</p>
+                    <p class="para2">We'll keep you updated on new episodes</p>
+                    <button class="badge">Browse podcasts</button>
+                </div>
+               </div>
+               <div class="lib-buttons">
+                    <button class="lib-btns">Legal</button>
+                    <button class="lib-btns">Privacy Center</button>
+                    <button class="lib-btns">Privacy Policy</button>
+                    <button class="lib-btns">Cookies</button>
+                    <button class="lib-btns">About Ads</button>
+                    <button class="lib-btns">Accessibility</button>
+                    <button class="lib-btns">Cookies</button>
+                </div>
+                <div class="lib-btn">
+                    <button class="lang-btn">
+                         <i class="fa-solid fa-globe"></i> English
+                    </button>
+                </div>
+           </div>
+     </div>
+     <div class="background">
+          <div class="main-content">
+               <div class="sticky-nav">
+                    <div class="sticky-nav-icons">
+                        <a href="index.html"><img src="./assets/backward_icon.png"></a>
+                        <img src="./assets/forward_icon.png" class="hide front-icon">
+                    </div>
+                    <div class="sticky-nav-options">
+                         <button class="badge nav-items hide">Explore Premium</button>
+                         <button class="badge nav-items dark-badge"><i class="fa-regular fa-circle-down"></i> Install App</button>
+                         <i class="fa-regular fa-user nav-items"></i>
+                    </div>
+               </div>
+               <input  type="text" placeholder="&#128269; What do you want to play?" id="search-bar">
+
+               <h2>Recent Searches</h2>
+               <div class="cards-container">
+                    <div class="card">
+                         <a href="still rolin.html">
+                             <div>
+                                 <img src="./assets/ab67616d0000b2731a8c4618eda885a406958dd0.jpeg" >
+                                 <p class="card-title">Still Rollin</p>
+                                 <p class="card-info">Shubh</p>
+                            </div>
+                         </a>
+                         <i class="fa-solid fa-circle-xmark remove-btn"></i>
+                    </div>
+                    <div class="card">
+                         <a href="ghost.html">
+                              <div>
+                                  <img src="./assets/ab67616d0000b273cb2f9520171129a3df7a241a.jpeg">
+                                  <p class="card-title">Ghost</p>
+                                  <p class="card-info">Diljit Dosanjh</p>
+                             </div>
+                          </a>
+                          <i class="fa-solid fa-circle-xmark remove-btn"></i>   
+                    </div>                  
+                    <div class="card">
+                         <a href="moosetape.html">
+                              <div>
+                                  <img src="./assets/ab67616d0000b2731d1cc2e40d533d7bcebf5dae.jpeg">
+                                  <p class="card-title">Moosetape</p>
+                                  <p class="card-info">Sidhu Moose Wala</p>
+                             </div>
+                          </a>
+                          <i class="fa-solid fa-circle-xmark remove-btn"></i>
+                    </div>
+                    <div class="card">
+                         <a href="making memories.html">
+                              <div>
+                                  <img src="./assets/ab67616d0000b273bb25239324c4e16ae01fda36.jpeg">
+                                  <p class="card-title">Making Memories</p>
+                                  <p class="card-info">karan Aujla, lkky</p>
+                             </div>
+                          </a>
+                          <i class="fa-solid fa-circle-xmark remove-btn"></i>
+                    </div>                  
+                    <div class="card">
+                         <a href="animal.html">
+                              <div>
+                                  <img src="./assets/ab67616d0000b2735f3ede47954a93aa03efe5f9.jpeg">
+                                  <p class="card-title">ANIMAL</p>
+                                  <p class="card-info">Manan Bhardwaj, Vishal Mishra, Jaani</p>
+                             </div>
+                          </a>
+                          <i class="fa-solid fa-circle-xmark remove-btn"></i>
+                    </div>
+               </div>
+               <h2>Browse all</h2>
+               <div class="fill-cards-container">
+                    <div class="fill-card">
+                       <span>Music</span>
+                       <img src="./assets/today top hit.jpg" alt="sng-img">
+                    </div>
+                    <div class="fill-card">
+                       <span>Music</span>
+                       <img src="./assets/today top hit.jpg" alt="sng-img">
+                    </div>
+                    <div class="fill-card">
+                       <span>Music</span>
+                       <img src="./assets/today top hit.jpg" alt="sng-img">
+                    </div>
+                    <div class="fill-card">
+                       <span>Music</span>
+                       <img src="./assets/today top hit.jpg" alt="sng-img">
+                    </div>
+                    <div class="fill-card">
+                       <span>Music</span>
+                       <img src="./assets/today top hit.jpg" alt="sng-img">
+                    </div>
+                    <div class="fill-card">
+                       <span>Music</span>
+                       <img src="./assets/today top hit.jpg" alt="sng-img">
+                    </div>
+                    <div class="fill-card">
+                       <span>Music</span>
+                       <img src="./assets/today top hit.jpg" alt="sng-img">
+                    </div>
+                    <div class="fill-card">
+                       <span>Music</span>
+                       <img src="./assets/today top hit.jpg" alt="sng-img">
+                    </div>
+                    <div class="fill-card">
+                       <span>Music</span>
+                       <img src="./assets/today top hit.jpg" alt="sng-img">
+                    </div>
+                    <div class="fill-card">
+                       <span>Music</span>
+                       <img src="./assets/today top hit.jpg" alt="sng-img">
+                    </div>
+                    <div class="fill-card">
+                       <span>Music</span>
+                       <img src="./assets/today top hit.jpg" alt="sng-img">
+                    </div>
+                    <div class="fill-card">
+                       <span>Music</span>
+                       <img src="./assets/today top hit.jpg" alt="sng-img">
+                    </div>
+                  </div>
+               <div class="footer">
+                    <div class="sec-footer">
+                         <div class="inner-box">
+                              <div class="btns-box">
+                                   <div class="comp">
+                                        <h4>Company</h4>
+                                        <button class="-btn">About</button><br>
+                                        <button class="-btn">Jobs</button><br>
+                                        <button class="-btn">For the Record</button><br>
+                                   </div>
+                                   <div class="comu">
+                                        <h4>Communities</h4>
+                                        <button class="-btn">For Artists</button><br>
+                                        <button class="-btn">Developers</button><br>
+                                        <button class="-btn">Advertising</button><br>
+                                        <button class="-btn">Investors</button><br>
+                                        <button class="-btn">Vendors</button><br>
+                                   </div>
+                                   <div class="links">
+                                        <h4>Useful links</h4>
+                                        <button class="-btn">Support</button><br>
+                                        <button class="-btn">Free Mobile App</button><br>
+                                   </div>
+                              </div>
+                              <div class="social">
+                                   <div class="social-icons"><i class="fa-brands fa-instagram"></i></div>
+                                   <div class="social-icons"><i class="fa-brands fa-twitter"></i></div>
+                                   <div class="social-icons"><i class="fa-brands fa-facebook"></i></div>
+                              </div>
+                         </div>
+                         <div class="line"></div>
+                         <div class="last-box">
+                              <div class="ftr-buttons">
+                                   <button class="ftr-btn">Legal</button>
+                                   <button class="ftr-btn">Privacy Center</button>
+                                   <button class="ftr-btn">Privacy Policy</button>
+                                   <button class="ftr-btn">Cookies</button>
+                                   <button class="ftr-btn">About Ads</button>
+                                   <button class="ftr-btn">Accessibility</button>
+                               </div>
+                         <div class="year">
+                            <p class="cpy-btn">&copy; 2024 Spotify AB</p>
+                         </div>
+                         </div>     
+                    </div>     
+               </div>
+            </div>          
+     </div>
+  <div class="music-player">
+     <div class="album">
+          <div class="album-elements">
+               <div class="picture">
+                    <img src="./assets/album_picture.jpeg" class="song-pic">
+               </div>
+               <div class="song">
+                    <p class="song-name">Daylight</p>
+                    <p class="singer-name">David Khushner</p>
+               </div>
+               <div class="album-btns">
+                    <img src="./assets/album_icon1.png" class="album-btn">
+               </div>
+          </div>
+     </div>
+     <div class="player">
+          <div class="player-controls">
+               <img src="./assets/player_icon1.png" class="player-control-icons">
+               <img src="./assets/player_icon2.png" class="player-control-icons">
+               <img src="./assets/player_icon3.png" class="player-control-icons play">
+               <img src="./assets/pause.png" class="player-control-icons pause invi" id="pause" onclick="pauseSong()">
+               <img src="./assets/player_icon4.png" class="player-control-icons">
+               <img src="./assets/player_icon5.png" class="player-control-icons">
+          </div>
+          <div class="playback-bar">
+               <span class="curr-time">00:00</span>
+               <input type="range" class="progress-bar">
+               <span class="tot-time">3:33</span>
+          </div>
+     </div>
+     <div class="controls">
+          <div class="controls-icons">
+               <img src="./assets/controls_icon1.png" class="buttons">
+               <img src="./assets/controld_icon2.png" class="buttons">
+               <img src="./assets/controls_icon3.png" class="buttons third">
+               <img src="./assets/controls_icon4.png" class="buttons fourth">
+               <img src="./assets/controls_icon5.png" class="buttons">
+               <input type="range" min="0" max="1" value="0.5" step="0.1"  class="volume-bar" id="volume" oninput="changeVolume()">     
+          </div>
+     </div>
+  </div>
+  <div class="mbl-bts-box">
+     <a href="" class="mbl-ftr-btn  mbl-ftr-btn-ed selected-btn  home-page-btn">
+          <i class="fa-solid fa-house"></i>
+          <p>Home</p>
+     </a>
+     <spna class="mbl-ftr-btn mbl-ftr-btn-ed">     
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <p>Search</p>
+     </spna>
+     <spna class="mbl-ftr-btn mbl-ftr-btn-ed" id="mbl-lib-btn">     
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <p>Your Library</p>
+     </spna>
+     <spna class="mbl-ftr-btn mbl-ftr-btn-ed">     
+          <i class="fa-brands fa-spotify logo"></i>
+          <p> Premium</p>
+     </spna>
+  </div>
+ </div>
+ <script src="app.js"></script>
+</body>
+</html>

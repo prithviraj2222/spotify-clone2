@@ -1,0 +1,2375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="./assets/spotify.png" rel="icon">
+  <title>Desi Hits | Spotify Playlist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalnia&family=Montserrat:wght@300;400;500;600;700&family=Poppins&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+ <style>
+  
+    .main-content {
+        background-image: linear-gradient(to bottom, #c38dc3, #121212 9.5%);
+        overflow: hidden;
+    }
+
+    .sticky-nav {
+        background-color: rgba(138,74,11,0.001);
+    }
+
+    .backward_icon {
+     opacity: 0.9;
+     color: #121212ee;
+     background-color: white;
+     font-size: 2.1rem;
+     border-radius: 50%;
+     cursor: pointer;
+    }
+
+    .fa-circle-chevron-right {
+     opacity: 0.55;
+     color: #121212ee;
+     background-color: white;
+     font-size: 2.1rem;
+     border-radius: 50%;
+     margin-left: 0.2rem;
+     cursor:not-allowed;
+    }
+
+    .sng-allinfo {
+     margin-left: 1.5rem;
+    }
+
+    .sng-pht {
+        height: 14.5rem;
+        width: 14.5rem;
+        border-radius: 0.3rem;
+        margin-top: 1rem;
+        transition: 0.2s;
+    }
+
+    .sng-pht:hover {
+     transform: scale(1.04);
+    }
+
+    .sng-info {
+        display: flex;
+        flex-flow: column;
+        flex: 1;
+        z-index: 0;
+        position: relative;
+        top: 4rem;
+        width: 47%;
+        margin-left: 1.4rem;
+        margin-top: 1.8rem;
+    }
+
+    .album {
+        font-size: 0.9rem;
+        font-weight: 590;
+        margin: 0;
+    }
+
+    .quentity {
+     font-weight: 500;
+    }
+
+   .sng-name {
+    font-size: 4.5rem;
+    display: flex;
+    font-weight: bolder;
+    align-items: center;
+    height: 5rem;
+    margin-bottom: 0;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: bolder;
+   }
+
+   @media (max-width:1300px) {
+    .sng-name {
+        font-size: 4rem;
+        margin-bottom: 0rem;
+    }
+
+    .sng-pht {
+        height: 13rem;
+        width: 13rem;
+    }
+   }
+
+   @media (max-width:1211px) {
+    .sng-name {
+        font-size: 3.8rem;
+        margin-bottom: 0rem;
+    }
+
+    .album,.ext-info {
+     font-size: .8rem
+    }
+
+    .sng-pht {
+        height: 13rem;
+        width: 13rem;
+    }
+   }
+
+   .singer-img {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    margin-right: 0.3rem;
+    margin-left: 0rem;
+   }
+
+   .singer-img img {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+   }
+
+   .time {
+     opacity: 0.7;
+     font-weight: 400;
+     font-size: 0.85rem;
+     margin-bottom: 0.3rem;
+   }
+
+    .ext-info {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        margin-top: 0.2rem;
+    }
+
+    .ext-info a:hover {
+     text-decoration: underline white;
+    }
+
+    .dot {
+        padding: 0px 0.2rem;
+    }
+
+    .options {
+     margin-top: 1rem;
+     padding: 1.25rem;
+     padding-left: 0;
+     width: 100%;
+     align-items: center;
+    }
+
+    .options-ele {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin: 0 1.5rem 0 1.5rem;
+    }
+
+    .options-ele i,span {
+     cursor: pointer;
+    }
+
+    .sng-allinfo {
+     display: flex;
+    }
+
+    .sng-play {
+     font-size: 4rem;
+     padding-right: 1.8rem;
+     color: #1ed760;
+     opacity: 1;
+     transition: 0.2s;
+    }
+
+    .sng-play:hover {
+     transform: scale(1.06);
+    }
+
+    .sng-like {
+     font-size: 2rem;
+     padding-right: 1.6rem;
+     opacity: 0.8;
+    }
+     
+    .sng-opt {
+     font-size: 2rem;
+     opacity: 0.8;
+    }
+
+    .sng-list {
+     font-size: 1rem;
+     padding-left: 0.5rem;
+    }
+
+    .list-ele {
+     opacity: 0.8;
+     padding-right: 0.5rem;
+    }
+
+    .list-ele:hover {
+     opacity: 1;
+    }
+
+    .list-items {
+     display: flex;
+     align-items: center;
+    }
+
+    .sng-like:hover{
+     opacity: 1;
+    }
+    
+    .sng-opt:hover {
+     opacity: 1;
+    }
+
+    .has {
+     padding-right: 1rem;
+    }
+
+    .sng-content {
+     margin-bottom: 1.5rem;
+    }
+
+    .sng-title {
+     padding-left: 1.2rem;
+     padding-right: 3rem;
+     display: flex;
+     justify-content: space-between;
+     margin-top: 0.5rem;
+    }
+
+    .sng-title span {
+     font-size: 1rem;
+     opacity: 0.8;
+    }
+
+    .sng-title .sng-album {
+     font-size: 0.9rem;
+    }
+
+    .t-line {
+     width: 100%;
+    height: 1px;
+    border-top: 1px solid white;
+    opacity: 0.1;
+    margin-top: 0.3rem;
+    }
+
+    .content-spacing {
+     margin: 0 1.5rem 0 1.5rem;
+    }
+
+    .songs {
+     padding: 0.5rem;
+     padding-left: 0.7rem;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-left: 0.6rem;
+    }
+
+    .sng:hover {
+     text-decoration: underline white;
+    }
+
+    .sng-mini-img {
+     height: 2.5rem;
+     width: 2.5rem;
+     border-radius: 0.3rem;
+     margin-top: 0.5rem;
+     margin-right: 0.8rem;
+    }
+
+    .sng-sing-name {
+     display: flex;
+     align-items: center;
+    }
+
+    .explicit {
+     background-color: hsla(0, 0%, 100%, .6);
+     color: #121212;
+     font-size: 9px;
+     font-weight: 600;
+     border-radius: 2px;
+     height: 0.6rem;
+     width: 0.35rem;
+     line-height: 10px;
+     padding: 3px 5px;
+     margin-right: 0.3rem;
+    }
+
+    .manan-art,.f-singer {
+     font-size: 0.9rem;
+     opacity: 0.7;
+    }   
+
+    .manan-art:hover ,.f-singer:hover{
+     text-decoration: underline white;
+    }
+    
+    .bhupi-art,.raj {
+     font-size: 0.9rem;
+     opacity: 0.7;
+    }
+
+    .raj:hover {
+     text-decoration: underline white;
+    }
+
+    .bhupi-art:hover {
+     text-decoration: underline white;
+    }
+
+    .sng-artist-info {
+     padding-left: 0rem;
+    }
+
+    .sng-no {
+     display: flex;
+     align-items: center;
+     flex: 2.5;
+    }
+
+    .sng-number {
+     opacity: 0.7;
+    }
+
+    .one {
+     padding-left: 0.15rem;
+    }
+
+    .play-sym {
+     width: 2.4rem;
+    }
+
+    .sng-play-btn {
+     opacity: 0;
+     cursor: auto;
+    }
+
+    .sng-time-info {
+     padding-right: 0.6rem;
+    }
+
+    .sng-fav {
+     opacity: 0;
+    }
+
+    .more-options {
+     opacity: 0;
+    }
+
+    .sng-time {
+     padding-right: 0.8rem;
+     padding-left: 1.5rem;
+     opacity: 0.7;
+     cursor: auto;
+    }
+
+    .songs:hover {
+     background-color: rgba(255, 255, 255, 0.108);
+     border-radius: 0.2rem;
+
+      .sng-fav {
+          opacity: 0.7;
+      }
+
+      .sng-fav:hover {
+          opacity: 1;
+      }
+
+      .more-options {
+          opacity: 1;
+      }
+
+      .sng-number {
+          display: none;
+      }
+
+      .sng-play-btn {
+          opacity: 1;
+          padding-right: 0.9rem;
+      }
+
+      .manan-art,.bhupi-art,.raj,.f-singer{
+          opacity: 1;
+      }
+
+    }
+
+    .movie-info {
+     opacity: 0.7;
+     margin-top: 2rem;
+    }
+
+    .movie-info p {
+     margin: 0;
+    }
+
+    .suggestion {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin: 2.5rem 1.5rem 0 1.5rem;
+    }
+
+    .suggestion span p {
+     font-size: 0.88rem;
+     opacity: 0.7;
+     font-weight: 600;
+    }
+
+    .suggestion span p:hover {
+     text-decoration: underline rgb(255, 255, 255,0.8);
+    }
+
+    .suggestion h2 {
+     margin: 0;
+     padding: 0;
+     font-size: 1.5rem;
+     opacity: 1;
+    }
+
+    .suggestion h2:hover {
+     text-decoration: underline white;
+    }
+
+    .back-clr {
+     background-image: linear-gradient(to bottom, rgb(0,0,0,0.12), #121212 60%);
+    }
+    
+    .sng-album-name{
+     flex: 2;
+    }
+
+    .song-title {
+     flex: 1.1;
+    }
+
+    .sng-album {
+     flex: 1;
+    }
+
+ </style>
+</head>
+<body>
+ <div class="main">
+     <div class="sidebar">
+          <div class="nav">
+               <div class="nav-option" style="opacity: 1;">
+                    <i class="fa-brands fa-spotify logo"></i><a href="#" class="name">Spotify</a><sup><i class="fa-regular fa-registered reg"></i></sup>
+               </div>
+               <div class="nav-option"  style="opacity: 1;">
+                    <a href="" class="home-page-btn">
+                         <i class="fa-solid fa-house"></i>
+                         <a href="index.html">Home</a>
+                    </a>
+               </div>
+               <div class="nav-option">
+                    <a href="" class="search-page-btn">
+                         <i class="fa-solid fa-magnifying-glass"></i>
+                         <a href="search.html">Search</a>     
+                    </a>
+               </div>
+           </div>
+           <div class="library">
+               <div class="option">
+                <div class="lib-option nav-option">
+                     <img src="./assets/library_icon.png">
+                    <a href="#">Your Liabrary</a>
+                </div>
+                <div class="icons">
+                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+               </div>
+               <div class="boxes">
+                <div class="box">
+                    <p class="para1">Create your first playlist</p>
+                    <p class="para2">It's easy, we'll help you</p>
+                    <button class="badge">Create playlist</button>
+                </div>
+                <div class="box">
+                    <p class="para1">Let's find some podcasts to follow</p>
+                    <p class="para2">We'll keep you updated on new episodes</p>
+                    <button class="badge">Browse podcasts</button>
+                </div>
+               </div>
+               <div class="lib-buttons">
+                    <button class="lib-btns">Legal</button>
+                    <button class="lib-btns">Privacy Center</button>
+                    <button class="lib-btns">Privacy Policy</button>
+                    <button class="lib-btns">Cookies</button>
+                    <button class="lib-btns">About Ads</button>
+                    <button class="lib-btns">Accessibility</button>
+                    <button class="lib-btns">Cookies</button>
+                </div>
+                <div class="lib-btn">
+                    <button class="lang-btn">
+                         <i class="fa-solid fa-globe"></i> English
+                    </button>
+                </div>
+           </div>
+     </div>
+  <div class="background">
+     <div class="main-content">
+          <div class="section">
+               <div class="head">
+                   <div class="sticky-nav">
+                       <div class="sticky-nav-icons">
+                         <a href="index.html"><i class="fa-solid fa-circle-chevron-left backward_icon"></i></a>
+                         <i class="fa-solid fa-circle-chevron-right hide"></i>
+                       </div>
+                       <div class="sticky-nav-options">
+                            <button class="badge nav-items hide">Explore Premium</button>
+                            <button class="badge nav-items dark-badge"><i class="fa-regular fa-circle-down"></i> Install App</button>
+                            <i class="fa-regular fa-user nav-items"></i>
+                       </div>
+                  </div>
+                  <div class="sng-allinfo">
+                       <span class="sng-img">
+                           <img src="./assets/desi hits.jpeg" class="sng-pht">
+                       </span>
+                      <span class="sng-info">
+                        <span class="album">Playlist</span>
+                        <span class="sng-name">Desi Hits</span>
+                        <span class="time">Best of South Asian Music. Cover: Dilijit Dosanjh & Saweetie</span>
+                         <div class="ext-info">
+                            <span class="singer-img"><img src="./assets/spotify-icon-free-png.webp"></span>
+                            <a href="#">Spotify</a>
+                            <span class="dot">. 
+                               <span class="quentity">800,555 likes</span>
+                            <span class="dot">.
+                               <span class="quentity" >90 songs, <span class="time">about 4 hr 45 min</span></span>
+                            </span>
+                         </div>
+                      </span>    
+                  </div>
+               </div>
+              <div class="back-clr">
+               <div class="options">
+                    <div class="options-ele">
+                         <span class="list-items">
+                              <i class="fa-solid fa-circle-play sng-play" onclick="playSong()"></i>
+                              <i class="fa-regular fa-heart sng-like"></i>
+                              <i class="fa-solid fa-ellipsis sng-opt"></i>     
+                         </span>
+                         <span class="list-ele list-items">
+                              <span for="list">List</span>
+                              <i class="fa-solid fa-list sng-list" id="list"></i>
+                         </span>
+                     </div>
+                   </div>
+                   <div class="content-spacing">
+                     <div class="sng-content">
+                          <div class="sng-title">
+                               <span class="song-title">
+                                    <span class="has">#</span>
+                                    <span>Title</span>
+                               </span>
+                               <span class="sng-album">Album</span>
+                               <span><i class="fa-regular fa-clock"></i></span>
+                          </div>
+                          <div class="t-line"></div>
+                     </div>
+                   <div class="songs" data-src="">
+                         <span class="sng-no">
+                              <span class="play-sym">
+                                   <span class="sng-number one">1</span>                
+                                   <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                             </span>
+                             <span><img src="./assets/khutti.jpeg" class="sng-mini-img"></span>
+                             <span class="sng-artist-info">
+                                  <span class="sng">Khutti</span>
+                                  <br>
+                                  <span class="sng-sing-name">
+                                   <span class="explicit">E</span>
+                                   <span class="manan-art">Dilijit Dosanjh</span>
+                                   <span class="bhupi-art">, Saweetie</span>
+                                </span>
+                             </span>   
+                         </span>
+                         <span class="sng-album-name manan-art">Khutti</span> 
+                         <span class="sng-time-info">
+                              <i class="fa-regular fa-heart sng-fav"></i>
+                              <span class="sng-time">2:12</span>
+                              <i class="fa-solid fa-ellipsis more-options"></i>          
+                         </span>
+                   </div>
+                   <div class="songs" data-src="">
+                         <span class="sng-no">
+                              <span class="play-sym">
+                                   <span class="sng-number ">2</span>                
+                                   <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                             </span>
+                             <span><img src="./assets/ab67616d0000b273cb2f9520171129a3df7a241a.jpeg" class="sng-mini-img"></span>
+                             <span class="sng-artist-info">
+                                  <span class="sng">Kinni Kinni</span>
+                                  <br>
+                                  <span class="manan-art">Dilijit Dosanjh</span>
+                                  <span class="bhupi-art">, thiarajxtt</span>
+                             </span>    
+                         </span>
+                         <span class="sng-album-name manan-art">Ghost</span>
+                         <span class="sng-time-info">
+                              <i class="fa-regular fa-heart sng-fav"></i>
+                              <span class="sng-time">3:33</span>
+                              <i class="fa-solid fa-ellipsis more-options"></i>          
+                         </span>
+                   </div>
+                   <div class="songs" data-src="">
+                         <span class="sng-no">
+                              <span class="play-sym">
+                                   <span class="sng-number">3</span>                
+                                   <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                             </span>
+                             <span><img src="./assets/street dreams.jpeg" class="sng-mini-img"></span>
+                             <span class="sng-artist-info">
+                                  <span class="sng">Tareefan</span>
+                                  <br>
+                                  <span class="manan-art">Karan Aujla</span>
+                                  <span class="bhupi-art">, DIVINE</span>
+                             </span>    
+                         </span>
+                         <span class="sng-album-name manan-art">Street Dreams</span>
+                         <span class="sng-time-info">
+                              <i class="fa-regular fa-heart sng-fav"></i>
+                              <span class="sng-time">2:54</span>
+                              <i class="fa-solid fa-ellipsis more-options"></i>          
+                         </span>
+                   </div>
+                   <div class="songs" data-src="">
+                         <span class="sng-no">
+                              <span class="play-sym">
+                                   <span class="sng-number">4</span>                
+                                   <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                             </span>
+                             <span><img src="./assets/nine.jpeg" class="sng-mini-img"></span>
+                             <span class="sng-artist-info">
+                                  <span class="sng">9:45</span>
+                                  <br>
+                                  <span class="manan-art">Prabh Singh</span>
+                                  <span class="bhupi-art">, Jay Trak</span>
+                                  <span class="raj">, Rooh Sandhu</span>
+                             </span>    
+                         </span>
+                         <span class="sng-album-name manan-art">9:45</span>
+                         <span class="sng-time-info">
+                              <i class="fa-regular fa-heart sng-fav"></i>
+                              <span class="sng-time">1:57</span>
+                              <i class="fa-solid fa-ellipsis more-options"></i>          
+                         </span>
+                   </div>
+                   <div class="songs" data-src="">
+                         <span class="sng-no">
+                              <span class="play-sym">
+                                   <span class="sng-number">5</span>                
+                                   <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                             </span>
+                             <span><img src="./assets/hass hass.jpeg" class="sng-mini-img"></span>
+                             <span class="sng-artist-info">
+                                  <span class="sng">Hass Hass</span>
+                                  <br>
+                                  <span class="manan-art">Dilijit Dosanjh</span>
+                                  <span class="bhupi-art">, Sia</span>
+                                  <span class="raj">, Greg Kurstin</span>
+                             </span>    
+                         </span>
+                         <span class="sng-album-name manan-art">Hass Hass</span>
+                         <span class="sng-time-info">
+                              <i class="fa-regular fa-heart sng-fav"></i>
+                              <span class="sng-time">2:33</span>
+                              <i class="fa-solid fa-ellipsis more-options"></i>          
+                         </span>
+                   </div>
+                   <div class="songs" data-src="">
+                         <span class="sng-no">
+                              <span class="play-sym">
+                                   <span class="sng-number">6</span>                
+                                   <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                             </span>
+                             <span><img src="./assets/ve haaniyaan.jpeg" class="sng-mini-img"></span>
+                             <span class="sng-artist-info">
+                                  <span class="sng">Ve Haaniyaan</span>
+                                  <br>
+                                  <span class="manan-art">Danny</span>
+                                  <span class="bhupi-art">, Avvy Sra</span>
+                                  <span class="raj">, Sagar</span>
+                             </span>    
+                         </span>
+                         <span class="sng-album-name manan-art">Ve Haaniyaan</span>
+                         <span class="sng-time-info">
+                              <i class="fa-regular fa-heart sng-fav"></i>
+                              <span class="sng-time">4:00</span>
+                              <i class="fa-solid fa-ellipsis more-options"></i>          
+                         </span>
+                   </div>
+                   <div class="songs" data-src="">
+                         <span class="sng-no">
+                              <span class="play-sym">
+                                   <span class="sng-number">7</span>                
+                                   <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                             </span>
+                             <span><img src="./assets/when we ride.jpeg" class="sng-mini-img"></span>
+                             <span class="sng-artist-info">
+                                  <span class="sng">Pehle Bhi Main</span>
+                                  <br>
+                                   <span class="manan-art">Vishal Mishra</span>
+                                   <span class="bhupi-art">, Raj Shekhar</span>
+                             </span>    
+                         </span>
+                         <span class="sng-album-name manan-art">ANIMAL</span>
+                         <span class="sng-time-info">
+                              <i class="fa-regular fa-heart sng-fav"></i>
+                              <span class="sng-time">4:10</span>
+                              <i class="fa-solid fa-ellipsis more-options"></i>          
+                         </span>
+                   </div>
+                   <div class="songs" data-src="">
+                         <span class="sng-no">
+                              <span class="play-sym">
+                                   <span class="sng-number">8</span>                
+                                   <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                             </span>
+                             <span><img src="./assets/tareefan.jpeg" class="sng-mini-img"></span>
+                             <span class="sng-artist-info">
+                                  <span class="sng">Tareefan</span>
+                                  <br>
+                                  <span class="manan-art">Jordan Sandhu</span>
+                                  <span class="bhupi-art">, Mehar Vaani</span>
+                             </span>    
+                         </span>
+                         <span class="sng-album-name manan-art">Tareefan</span>
+                         <span class="sng-time-info">
+                              <i class="fa-regular fa-heart sng-fav"></i>
+                              <span class="sng-time">3:12</span>
+                              <i class="fa-solid fa-ellipsis more-options"></i>          
+                         </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number">9</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/sadqay.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Sadqay</span>
+                                <br>
+                                <span class="manan-art">Aashir Wajahat</span>
+                                <span class="bhupi-art">, NAYEL</span>
+                                <span class="raj">, Nehaal Naseem</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Sadqay</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:34</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">10</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/koi si.jpg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Koi Si</span>
+                                <br>
+                                <span class="manan-art">Afsana Khan</span>
+                                <span class="bhupi-art">, Nirmaan</span>   
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Koi Si</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:19</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">11</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/saanware.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Saanware</span>
+                                <br>
+                                <span class="manan-art">Akhil Sachdeva</span>
+                                <span class="bhupi-art">, Kartik Dev</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Saanware</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:15</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">12</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/o maahi.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">O Maahi (From "Dunki")</span>
+                                <br>
+                                <span class="manan-art">Pritam</span>
+                                <spna class="bhupi-art">, Arijit Singh</spna>
+                                <span class="raj">, Irshad Kamil</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">O Maahi (From "Dunki")</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:53</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">13</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/one love.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">One Love</span>
+                                <br>
+                                <span class="manan-art">Shubh</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">One Love</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:39</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">14</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/when we ride.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Chaleya</span>
+                                <br>
+                                   <span class="manan-art">Anirudh Ravichander</span>
+                                   <span class="bhupi-art">, Arijit Singh</span>
+                                   <span class="f-singer">, Shilpa Rao</span>
+                                   <span class="raj">, Kumaar</span>
+                              </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Jawan</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:20</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">15</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/chheti de devari.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Chheti De Drivari Sikha</span>
+                                <br>
+                                <span class="manan-art">Satnam Sagar</span>
+                                <span class="bhupi-art">, Sharanjeet Shammi</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Munda Hon Diyan Pudeeyan</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">4:16</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">16</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/sang rahiyo.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Sang Rahiyo</span>
+                                <br>
+                                <span class="manan-art">Jasleen Royal</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Sang Rahiyo</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:33</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">17</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/fourty five.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">.45</span>
+                                <br>
+                                <span class="manan-art">Wazir Patar</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">.45</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:40</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">18</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/apna bna le.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Apna Bana Le</span>
+                                <br>
+                                <span class="manan-art">Sachin-Jigar</span>
+                                <span class="bhupi-art">, Arijit Singh</span>
+                                <span class="raj">, Amitabh Bhattacharya</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Bhediya (Original Motion Picture Soundtrack)</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">4:21</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">19</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/leo.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">You and Me</span>
+                                <br>
+                                <span class="manan-art">Shubh</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Leo</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:52</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">20</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/love ya.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Love Ya</span>
+                                <br>
+                                   <span class="manan-art">Dilijit Dosanjh</span>
+                                   <span class="bhupi-art">, Sagar</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Love Ya</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:41</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">21</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/tu hai kaha.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Tu hai Kahan</span>
+                                <br>
+                                   <span class="manan-art">AUR</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Tu hai Kahan</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">4:23</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">22</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/pasoori.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Pasoori</span>
+                                <br>
+                                <span class="manan-art">Shae Gill</span>
+                                <span class="bhupi-art">, Ali Sethi</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Pasoori</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:44</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">23</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/drive thru.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Lemonade</span>
+                                <br>
+                                <span class="manan-art">Dilijit Dosanjh</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Drive Thru</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:46</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">24</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/santranga.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Satranga (From "ANIMAL")</span>
+                                <br>
+                                <span class="manan-art">Arijit Singh</span>
+                                <span class="bhupi-art">, Shreyas Puranik</span>
+                                <span class="raj">, Siddhart - Garima7uj</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Satranga (From "ANIMAL")</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">4:31</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">25</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ab67616d0000b2731a8c4618eda885a406958dd0.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Still Rollin</span>
+                                <br>
+                                <span class="manan-art">Shubh</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Still Rollin</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:54</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">26</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/desi hood.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Desi Hood</span>
+                                <br>
+                                <span class="manan-art">Saabi Bhinder</span>
+                                <span class="bhupi-art">, Cheetah</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Walk in Victory</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:26</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">27</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ab67616d0000b273cb2f9520171129a3df7a241a.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Amiri</span>
+                                <br>
+                                <span class="manan-art">Dilijit Dosanjh</span>
+                                <span class="bhupi-art">, thiarajxtt</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Ghost</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">1:57</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">28</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/off roading.png" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Off Roading</span>
+                                <br>
+                                <span class="manan-art">Khan Bhaini</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Off Roading</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:21</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">29</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ab67616d0000b273cb2f9520171129a3df7a241a.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Case</span>
+                                <br>
+                                <span class="manan-art">Dilijit Dosanjh</span>
+                                <span class="bhupi-art">, Intense</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Ghost</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:15</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">30</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/nimm thalle.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Nimm Thalle</span>
+                                <br>
+                                <span class="manan-art">Jordan Sandhu</span>
+                                <span class="bhupi-art">, Desi Crew</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Nimm Thalle</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:00</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">31</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ab67616d0000b273cb2f9520171129a3df7a241a.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Kinni Kinni</span>
+                                <br>
+                                <span class="manan-art">Dilijit Dosanjh</span> 
+                                <span class="bhupi-art">, thiarajxtt</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Ghost</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:33</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">32</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ainak.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Ainak</span>
+                                <br>
+                                <span class="manan-art">Gulab Sidhu</span>
+                                <span class="bhupi-art">, Sukh Lotey</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Ainak</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:58</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">33</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/anyway.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">California Love</span>
+                                <br>
+                                <span class="sng-sing-name">
+                                   <span class="explicit">E</span>
+                                   <span class="manan-art">Cheema Y</span>
+                                   <span class="bhupi-art">, Gur Sidhu</span>
+                                </span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">ANYWAY</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:55</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">34</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ab67616d0000b2731a8c4618eda885a406958dd0.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Cheques</span>
+                                <br>
+                                <span class="manan-art">Shubh</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Still Rollin</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:03</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">35</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/check it out.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Check It Out</span>
+                                <br>
+                                <span class="manan-art">Parmish Verma</span>
+                                <span class="bhupi-art">, Paradox</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Check It Out</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:15</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">36</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ab67616d0000b273cb2f9520171129a3df7a241a.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Lalkara</span>
+                                <br>
+                                <span class="manan-art">Dilijit Dosanjh</span>
+                                <span class="bhupi-art">, Intense</span>
+                                <span class="raj">, Sultaan</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Ghost</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:40</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">37</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/aam jahe munde.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Aam Jahe Munde</span>
+                                <br>
+                                <span class="manan-art">Parmish Verma</span>
+                                <span class="bhupi-art">, PARDHAAN</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Aam Jahe Munde</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:27</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">38</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/white brown black.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">White Brown Black</span>
+                                <br>
+                                <span class="manan-art">Avvy Sra</span>
+                                <span class="bhupi-art">, Karan Aujla</span>
+                                <span class="raj">, Jaani</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">White Brown Black</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:55</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">39</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/my prime.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">My Prime</span>
+                                <br>
+                                <span class="manan-art">Navaan Sandhu</span>
+                                <span class="bhupi-art">, bebhumika</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Naveezy</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">4:10</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">40</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ab67616d0000b273bb25239324c4e16ae01fda36.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Jee Ni Lagda</span>
+                                <br>
+                                <span class="manan-art">Karan Aujla</span>
+                                <span class="bhupi-art">, Ikky</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Making Memories</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:19</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">41</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/rubicon.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Rubicon</span>
+                                <br>
+                                <span class="manan-art">Prem Dhillon</span>
+                                <span class="bhupi-art">, Rass</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Rubicon</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">4:11</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">42</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/attraction.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Attraction</span>
+                                <br>
+                                <span class="manan-art">Sukha</span>
+                                <span class="bhupi-art">, Prodgk</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Attraction</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:03</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">43</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/one love.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">One Love</span>
+                                <br>
+                                <span class="manan-art">Shubh</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">One Love</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:39</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">44</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/pov.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">P.O.V (Poin of View)</span>
+                                <br>
+                                <span class="manan-art">Karan Aujla</span>
+                                <spna class="bhupi-art">, Yeah Proof</spna>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">P.O.V (Poin of View)</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:05</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">45</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/four you.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Take It Easy</span>
+                                <br>
+                                <span class="manan-art">Karan Aujla</span>
+                                <span class="bhupi-art">, Ikky</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Four You</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:30</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">46</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/daku.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Daku</span>
+                                <br>
+                                <span class="manan-art">Chani Nattan</span>
+                                <span class="bhupi-art">, Inderpal Moga</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Daku</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:11</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">47</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/the last ride.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">The Last Ride</span>
+                                <br>
+                                <span class="manan-art">Sidhu Moose Wala</span>
+                                <span class="bhupi-art">, Wazir Patar</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">The Last Ride</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">4:22</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">48</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/showstopper.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Showstopper</span>
+                                <br>
+                                <span class="sng-sing-name">
+                                   <span class="explicit">E</span>
+                                   <span class="manan-art">JERRY</span>
+                                </span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Showstopper</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:26</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">49</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ab67616d0000b2731d1cc2e40d533d7bcebf5dae.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Sidhu Son</span>
+                                <br>
+                                <span class="manan-art">Sidhu Moose Wala</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Moosetape</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:37</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">50</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/on top.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">On Top</span>
+                                <br>
+                                <span class="manan-art">Karan Aujla</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">On top</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:03</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">51</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/death row.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Death Row</span>
+                                <br>
+                                <span class="manan-art">Ninja</span>
+                                <span class="bhupi-art">, J.Hind</span>
+                                <span class="raj">, Deep Jandu</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Death Row</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:05</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">52</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/gansta.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Gangsta</span>
+                                <br>
+                                <span class="sng-sing-name">
+                                   <span class="explicit">E</span>
+                                   <span class="manan-art">Karan Aujla</span>
+                                   <span class="bhupi-art">, YG</span>
+                                </span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Way Ahead</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:10</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">53</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ittar.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Ittar</span>
+                                <br>
+                                <span class="manan-art">Jasmine Sandlas</span>
+                                <span class="bhupi-art">, B Praak</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Ittar</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:20</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">54</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/tu te sharab.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Tu Te Sharab</span>
+                                <br>
+                                <span class="manan-art">Jordan Sandhu</span>
+                                <span class="bhupi-art">, Desi Crew</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Tu Te Sharab</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:15</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">55</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/dilawara.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Dilawara</span>
+                                <br>
+                                <span class="manan-art">The PropheC</span>
+                                <span class="bhupi-art">, B Ezu</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Dilawara</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:42</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">56</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/players.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Players</span>
+                                <br>
+                                <span class="sng-sing-name">
+                                   <span class="explicit">E</span>
+                                   <span class="manan-art">Badshah</span>
+                                   <span class="bhupi-art">, Karan Aujla</span>
+                                   <span class="raj">, Devika Badyal</span>
+                                </span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">3:00 AM Sessions</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:51</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">57</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/her.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Her</span>
+                                <br>
+                                <span class="manan-art">Shubh</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Her</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:34</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">58</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/wo noor.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">wo Noor</span>
+                                <br>
+                                <span class="manan-art">AP Dhillon</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Two Hearts Never Break The Same</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:19</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">59</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ab67616d0000b2731d1cc2e40d533d7bcebf5dae.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">295</span>
+                                <br>
+                                <span class="manan-art">Sidhu Moose Wala</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Moosetape</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">4:30</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">60</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/Kina chir.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Kina Chir</span>
+                                <br>
+                                <span class="manan-art">The PropheC</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">The Lifestyle</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:36</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">61</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/one question.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">One Question</span>
+                                <br>
+                                <span class="manan-art">Tegi Pannu</span>
+                                <span class="bhupi-art">, Manni Sandhu</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Disturbind the Peace</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:49</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">62</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/no name.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Never Fold</span>
+                                <br>
+                                <span class="manan-art">Sidhu Moose Wala</span>
+                                <span class="bhupi-art">, Sunny Malton</span>
+                                <span class="raj">, SOE</span>
+                           </span>   
+                       </span>
+                       <span class="sng-album-name manan-art">No Name</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:03</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">63</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/sheesha.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Sheesha</span>
+                                <br>
+                                <span class="manan-art">Karan Aujla</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Sheesha</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:40</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">64</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/tere te.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Tere Te</span>
+                                <br>
+                                <span class="manan-art">AP Dhillon</span>
+                                <span class="bhupi-art">, Gurinder Gill</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">HIDDEN GEMS</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">1:54</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">65</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/elevated.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Elevated</span>
+                                <br>
+                                <span class="sng-sing-name">
+                                   <span class="explicit">E</span>
+                                   <span class="manan-art">Shubh</span>
+                                </span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Elevated</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:20</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">66</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/no name.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Everybody Hurts</span>
+                                <br>
+                                <span class="manan-art">Sidhu Moose Wala</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">No Name</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:53</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">67</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/lover.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Lover</span>
+                                <br>
+                                <span class="manan-art">Dilijit Dosanjh</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">MoonChild Era</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:10</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">68</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/untouchable.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Untouchable</span>
+                                <br>
+                                <span class="manan-art">Tegi Pannu</span>
+                                <span class="bhupi-art">, Manni Sandhu</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Untouchable</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:33</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">69</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ab67616d0000b2731d1cc2e40d533d7bcebf5dae.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">These Days (feat. Bohemia)</span>
+                                <br>
+                                <span class="manan-art">Sidhu Moose Wala</span>
+                                <span class="bhupi-art">, Bohemia</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Moosetape</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:29</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">70</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/tere te.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">SPACESHIP</span>
+                                <br>
+                                <span class="manan-art">AP Dhillon</span>
+                                <span class="bhupi-art">, Shinda Kahlon</span>
+                                <span class="raj">, Gminxr</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">HIDDEN GEMS</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:04</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">71</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/distance love.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                              <span class="sng">Distance Love</span>
+                              <br>
+                              <span class="manan-art">Zehar Vibe</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Distance Love</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:30</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                   </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">72</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/no name.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Love Sick</span>
+                                <br>
+                                <span class="manan-art">Sidhu Moose Wala</span>
+                                <span class="bhupi-art">, AR Paisley</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">No Name</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:52</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                    </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">73</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/ykwhim.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Ykwim</span>
+                                <br>
+                                <span class="manan-art">Karan Aujla</span>
+                                <span class="bhupi-art">, KR$NA</span>
+                                <span class="raj">, Mehar Vaani</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Ykwim</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:14</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                    </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">74</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/drive thru.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">Peaches</span>
+                                <br>
+                                <span class="manan-art">Dilijit Dosanjh</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">Drive Thru</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:09</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                    </div>
+                   <div class="songs" data-src="">
+                       <span class="sng-no">
+                            <span class="play-sym">
+                                 <span class="sng-number two">75</span>                
+                                 <i class="fa-solid fa-play sng-play-btn"></i>
+                                 <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                           </span>
+                           <span><img src="./assets/no name.jpeg" class="sng-mini-img"></span>
+                           <span class="sng-artist-info">
+                                <span class="sng">0 to 100</span>
+                                <br>
+                                <span class="manan-art">Sidhu Moose Wala</span>
+                           </span>    
+                       </span>
+                       <span class="sng-album-name manan-art">No Name</span>
+                       <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">1:48</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>          
+                       </span>
+                    </div>
+                     <div class="movie-info">
+                         <p style="font-size: 0.9rem;">May 15, 2021</p>
+                         <p style="font-size: 0.7rem;">© 2021 Sidhu Moose Wala</p>
+                         <p style="font-size: 0.7rem;">℗ 2021 Sidhu Moose Wala</p>
+                     </div>
+                  </div>
+              </div>
+               <div class="ext-song">
+                  <div class="suggestion">
+                       <span>
+                            <h2>You might also like</h2>
+                       </span>
+                  </div>
+                  <div class="cards-container">
+                      <div class="card">
+                           <img src="./assets/hot hits punjabi.jpeg">
+                           <p class="card-title">Hot Hits Punjabi</p>
+                           <p class="card-info">By Spotify</p>
+                      </div>
+                      <div class="card">
+                           <img src="./assets/punjabi 101.jpeg">
+                           <p class="card-title">Punjabi 101</p>
+                           <p class="card-info">By Spotify</p>
+                      </div>
+                      <div class="card">
+                           <img src="./assets/best of punjabi 2023.jpeg">
+                           <p class="card-title">Best of Punjabi 101...</p>
+                           <p class="card-info">By Spotify</p>
+                      </div>
+                      <div class="card">
+                           <img src="./assets/top punjabi artists.jpg">
+                           <p class="card-title">Top Punjabi Artist...</p>
+                           <p class="card-info">By Spotify</p>
+                      </div>
+                      <div class="card">
+                           <img src="./assets/chill karlo.jpeg">
+                           <p class="card-title">Chill Karlo</p>
+                           <p class="card-info">By Spotify</p>
+                      </div>
+                 </div>
+               </div>
+           </div>
+                 <div class="footer">
+                      <div class="sec-footer">
+                           <div class="inner-box">
+                                <div class="btns-box">
+                                     <div class="comp">
+                                          <h4>Company</h4>
+                                          <button class="-btn">About</button><br>
+                                          <button class="-btn">Jobs</button><br>
+                                          <button class="-btn">For the Record</button><br>
+                                     </div>
+                                     <div class="comu">
+                                          <h4>Communities</h4>
+                                          <button class="-btn">For Artists</button><br>
+                                          <button class="-btn">Developers</button><br>
+                                          <button class="-btn">Advertising</button><br>
+                                          <button class="-btn">Investors</button><br>
+                                          <button class="-btn">Vendors</button><br>
+                                     </div>
+                                     <div class="links">
+                                          <h4>Useful links</h4>
+                                          <button class="-btn">Support</button><br>
+                                          <button class="-btn">Free Mobile App</button><br>
+                                     </div>
+                                </div>
+                                <div class="social">
+                                     <div class="social-icons"><i class="fa-brands fa-instagram"></i></div>
+                                     <div class="social-icons"><i class="fa-brands fa-twitter"></i></div>
+                                     <div class="social-icons"><i class="fa-brands fa-facebook"></i></div>
+                                </div>
+                           </div>
+                           <div class="line"></div>
+                           <div class="last-box">
+                                <div class="ftr-buttons">
+                                     <button class="ftr-btn">Legal</button>
+                                     <button class="ftr-btn">Privacy Center</button>
+                                     <button class="ftr-btn">Privacy Policy</button>
+                                     <button class="ftr-btn">Cookies</button>
+                                     <button class="ftr-btn">About Ads</button>
+                                     <button class="ftr-btn">Accessibility</button>
+                                 </div>
+                           <div class="year">
+                              <p class="cpy-btn">&copy; 2024 Spotify AB</p>
+                           </div>
+                           </div>     
+                      </div>     
+                 </div>
+         </div>       
+     </div>
+  <div class="music-player">
+     <div class="album">
+          <div class="album-elements">
+               <div class="picture">
+                    <img src="./assets/album_picture.jpeg" class="song-pic">
+               </div>
+               <div class="song">
+                    <p class="song-name">Daylight</p>
+                    <p class="singer-name">David Khushner</p>
+               </div>
+               <div class="album-btns">
+                    <img src="./assets/album_icon1.png" class="album-btn">
+               </div>
+          </div>
+     </div>
+     <div class="player">
+          <div class="player-controls">
+               <img src="./assets/player_icon1.png" class="player-control-icons">
+               <img src="./assets/player_icon2.png" class="player-control-icons" onclick="prevSong()">
+               <img src="./assets/player_icon3.png" class="player-control-icons play" id="play" onclick="playSong()">
+               <img src="./assets/pause.png" class="player-control-icons pause invi" id="pause" onclick="pauseSong()">
+               <img src="./assets/player_icon4.png" class="player-control-icons" onclick="nextSong()">
+               <img src="./assets/player_icon5.png" class="player-control-icons">
+          </div>
+          <div class="playback-bar">
+               <span class="curr-time">00:00</span>
+               <input type="range" min="0" max="100" step="1" class="progress-bar">
+               <span class="tot-time">3:33</span>
+          </div>
+     </div>
+     <div class="controls">
+          <div class="controls-icons">
+               <img src="./assets/controls_icon1.png" class="buttons">
+               <img src="./assets/controld_icon2.png" class="buttons">
+               <img src="./assets/controls_icon3.png" class="buttons third">
+               <img src="./assets/controls_icon4.png" class="buttons fourth">
+               <img src="./assets/controls_icon5.png" class="buttons">
+               <input type="range" min="0" max="1" value="0.5" step="0.1"  class="volume-bar" id="volume" oninput="changeVolume()">     
+          </div>
+     </div>
+  </div>
+ </div>
+ <script src="app.js"></script>
+</body>
+</html>

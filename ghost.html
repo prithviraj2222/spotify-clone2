@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="./assets/spotify.png" rel="icon">
+  <title>Ghost - Album by Dilijit Dosanjh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalnia&family=Montserrat:wght@300;400;500;600;700&family=Poppins&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+ <style>
+
+    .main-content {
+        background-image: linear-gradient(to bottom, #ccc4c4, #121212 20%);
+        overflow: hidden;
+    }
+
+    .sticky-nav {
+        background-color: rgba(138,74,11,0.001);
+    }
+
+    .backward_icon {
+     opacity: 0.9;
+     color: #121212ee;
+     background-color: white;
+     font-size: 2.1rem;
+     border-radius: 50%;
+     cursor: pointer;
+    }
+
+    .fa-circle-chevron-right {
+     opacity: 0.55;
+     color: #121212ee;
+     background-color: white;
+     font-size: 2.1rem;
+     border-radius: 50%;
+     margin-left: 0.2rem;
+     cursor:not-allowed;
+    }
+
+    .sng-allinfo {
+     margin-left: 1.5rem;
+    }
+
+    .sng-pht {
+        height: 14.5rem;
+        width: 14.5rem;
+        border-radius: 0.3rem;
+        margin-top: 1.2rem;
+        transition: 0.2s;
+    }
+
+    .sng-pht:hover {
+     transform: scale(1.04);
+    }
+
+    .sng-info {
+        display: flex;
+        flex-flow: column;
+        flex: 1;
+        z-index: 0;
+        position: relative;
+        top: 3.5rem;
+        width: 47%;
+        margin-left: 1.4rem;
+        margin-top: 1.8rem;
+    }
+
+    .album {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+   .sng-name {
+    font-size: 6rem;
+    display: flex;
+    align-items: center;
+    height: 6rem;
+    margin-bottom: 1rem;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: bolder;
+   }
+
+   @media (max-width:1300px) {
+    .sng-name {
+        font-size: 4rem;
+        margin-bottom: 0rem;
+    }
+
+    .sng-pht {
+        height: 13rem;
+        width: 13rem;
+    }
+   }
+
+   @media (max-width:1211px) {
+    .sng-name {
+        font-size: 3.8rem;
+        margin-bottom: 0rem;
+    }
+
+    .album,.ext-info {
+     font-size: .8rem
+    }
+
+    .sng-pht {
+        height: 13rem;
+        width: 13rem;
+    }
+   }
+
+   .singer-img {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    margin-right: 0.3rem;
+    margin-left: 0.2rem;
+   }
+
+   .singer-img img {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+   }
+
+    .ext-info {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        margin-top: 0.2rem;
+    }
+
+    .ext-info a:hover {
+     text-decoration: underline white;
+    }
+
+    .dot {
+        padding: 0px 0.2rem;
+    }
+
+    .options {
+     margin-top: 1rem;
+     padding: 1.25rem;
+     padding-left: 0;
+     width: 100%;
+     align-items: center;
+    }
+
+    .options-ele {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin: 0 1.5rem 0 1.5rem;
+    }
+
+    .options-ele i,span {
+     cursor: pointer;
+    }
+
+    .sng-allinfo {
+     display: flex;
+    }
+
+    .sng-play {
+     font-size: 4rem;
+     padding-right: 1.8rem;
+     color: #1ed760;
+     opacity: 1;
+     transition: 0.2s;
+    }
+
+    .sng-play:hover {
+     transform: scale(1.06);
+    }
+
+    .sng-like {
+     font-size: 2rem;
+     padding-right: 1.6rem;
+     opacity: 0.8;
+    }
+     
+    .sng-opt {
+     font-size: 2rem;
+     opacity: 0.8;
+    }
+
+    .sng-list {
+     font-size: 1rem;
+     padding-left: 0.5rem;
+    }
+
+    .list-ele {
+     opacity: 0.8;
+     padding-right: 0.5rem;
+    }
+
+    .list-ele:hover {
+     opacity: 1;
+    }
+
+    .list-items {
+     display: flex;
+     align-items: center;
+    }
+
+    .sng-like:hover{
+     opacity: 1;
+    }
+    
+    .sng-opt:hover {
+     opacity: 1;
+    }
+
+    .has {
+     padding-right: 1rem;
+    }
+
+    .sng-content {
+     margin-bottom: 1.5rem;
+    }
+
+    .sng-title {
+     padding-left: 1.2rem;
+     padding-right: 3.2rem;
+     display: flex;
+     justify-content: space-between;
+     margin-top: 0.5rem;
+    }
+
+    .sng-title span {
+     font-size: 1rem;
+     opacity: 0.8;
+    }
+
+    .t-line {
+     width: 100%;
+     height: 1px;
+     border-top: 1px solid white;
+     opacity: 0.1;
+     margin-top: 0.3rem;
+    }
+
+    .content-spacing {
+     margin: 0 1.5rem 0 1.5rem;
+    }
+
+    .back-clr{
+     background-image: linear-gradient(to bottom, rgb(0,0,0,0.12), #121212 60%);
+    }
+
+    .songs {
+     padding: 0.5rem;
+     padding-left: 0.7rem;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-left: 0.6rem;
+    }
+
+    .sng:hover {
+     text-decoration: underline white;
+    }
+
+    .manan-art {
+     font-size: 0.9rem;
+     opacity: 0.7;
+    }   
+
+    .manan-art:hover {
+     text-decoration: underline white;
+    }
+    
+    .bhupi-art,.raj {
+     font-size: 0.9rem;
+     opacity: 0.7;
+    }
+
+    .raj:hover {
+     text-decoration: underline white;
+    }
+
+    .bhupi-art:hover {
+     text-decoration: underline white;
+    }
+
+    .sng-artist-info {
+     padding-left: 0rem;
+    }
+
+    .sng-no {
+     display: flex;
+     align-items: center;
+    }
+
+    .sng-number {
+     opacity: 0.7;
+    }
+
+    .one {
+     padding-left: 0.15rem;
+    }
+
+    .play-sym {
+     width: 2.4rem;
+    }
+
+    .sng-play-btn {
+     opacity: 0;
+     cursor: auto;
+    }
+
+    .sng-time-info {
+     padding-right: 0.6rem;
+    }
+
+    .sng-fav {
+     opacity: 0;
+    }
+
+    .more-options {
+     opacity: 0;
+    }
+
+    .sng-time {
+     padding-right: 0.8rem;
+     padding-left: 1.5rem;
+     opacity: 0.7;
+     cursor: auto;
+    }
+
+    .songs:hover {
+     background-color: rgba(255, 255, 255, 0.108);
+     border-radius: 0.2rem;
+
+      .sng-fav {
+          opacity: 0.7;
+      }
+
+      .sng-fav:hover {
+          opacity: 1;
+      }
+
+      .more-options {
+          opacity: 1;
+      }
+
+      .sng-number {
+          display: none;
+      }
+
+      .sng-play-btn {
+          opacity: 1;
+          padding-right: 0.9rem;
+      }
+
+      .manan-art,.bhupi-art,.raj {
+          opacity: 1;
+      }
+
+    }
+
+    .movie-info {
+     opacity: 0.7;
+     margin-top: 2rem;
+    }
+
+    .movie-info p {
+     margin: 0;
+    }
+
+    .suggestion {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin: 2.5rem 1.5rem 0 1.5rem;
+    }
+
+    .suggestion span p {
+     font-size: 0.88rem;
+     opacity: 0.7;
+     font-weight: 600;
+    }
+
+    .suggestion span p:hover {
+     text-decoration: underline rgb(255, 255, 255,0.8);
+    }
+
+    .suggestion h2 {
+     margin: 0;
+     padding: 0;
+     font-size: 1.5rem;
+     opacity: 1;
+    }
+
+    .suggestion h2:hover {
+     text-decoration: underline white;
+    }
+
+ </style>
+</head>
+<body>
+ <div class="main">
+     <div class="sidebar">
+          <div class="nav">
+               <div class="nav-option" style="opacity: 1;">
+                    <i class="fa-brands fa-spotify logo"></i><a href="#" class="name">Spotify</a><sup><i class="fa-regular fa-registered reg"></i></sup>
+               </div>
+               <div class="nav-option"  style="opacity: 1;">
+                    <a href="" class="home-page-btn">
+                         <i class="fa-solid fa-house"></i>
+                         <a href="index.html">Home</a>
+                    </a>
+               </div>
+               <div class="nav-option">
+                    <a href="" class="search-page-btn">
+                         <i class="fa-solid fa-magnifying-glass"></i>
+                         <a href="search.html">Search</a>     
+                    </a>
+               </div>
+           </div>
+           <div class="library">
+               <div class="option">
+                <div class="lib-option nav-option">
+                     <img src="./assets/library_icon.png">
+                    <a href="#">Your Liabrary</a>
+                </div>
+                <div class="icons">
+                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+               </div>
+               <div class="boxes">
+                <div class="box">
+                    <p class="para1">Create your first playlist</p>
+                    <p class="para2">It's easy, we'll help you</p>
+                    <button class="badge">Create playlist</button>
+                </div>
+                <div class="box">
+                    <p class="para1">Let's find some podcasts to follow</p>
+                    <p class="para2">We'll keep you updated on new episodes</p>
+                    <button class="badge">Browse podcasts</button>
+                </div>
+               </div>
+               <div class="lib-buttons">
+                    <button class="lib-btns">Legal</button>
+                    <button class="lib-btns">Privacy Center</button>
+                    <button class="lib-btns">Privacy Policy</button>
+                    <button class="lib-btns">Cookies</button>
+                    <button class="lib-btns">About Ads</button>
+                    <button class="lib-btns">Accessibility</button>
+                    <button class="lib-btns">Cookies</button>
+                </div>
+                <div class="lib-btn">
+                    <button class="lang-btn">
+                         <i class="fa-solid fa-globe"></i> English
+                    </button>
+                </div>
+           </div>
+     </div>
+  <div class="background">
+     <div class="main-content">
+          <div class="section">
+               <div class="head">
+                   <div class="sticky-nav">
+                       <div class="sticky-nav-icons">
+                         <a href="index.html"><i class="fa-solid fa-circle-chevron-left backward_icon"></i></a>
+                         <i class="fa-solid fa-circle-chevron-right hide"></i>
+                       </div>
+                       <div class="sticky-nav-options">
+                            <button class="badge nav-items hide">Explore Premium</button>
+                            <button class="badge nav-items dark-badge"><i class="fa-regular fa-circle-down"></i> Install App</button>
+                            <i class="fa-regular fa-user nav-items"></i>
+                       </div>
+                  </div>
+                  <div class="sng-allinfo">
+                       <span class="sng-img">
+                           <img src="./assets/ab67616d0000b273cb2f9520171129a3df7a241a.jpeg" class="sng-pht">
+                       </span>
+                      <span class="sng-info">
+                        <span class="album">Album</span>
+                        <span class="sng-name">Ghost</span>
+                         <div class="ext-info">
+                            <span class="singer-img"><img src="./assets/Snapinsta.app_343111618_237478218937905_980114793430031196_n_1080.jpg"></span>
+                            <a href="#">Dilijit Dosanjh</a>
+                            <span class="dot">. 
+                               <span>2023</span>
+                            <span class="dot">.
+                               <span>22 songs, 54 min 42 sec</span>
+                            </span>
+                         </div>
+                      </span>    
+                  </div>
+               </div>
+               <div class="back-clr">
+                    <div class="options">
+                         <div class="options-ele">
+                              <span class="list-items">
+                                   <i class="fa-solid fa-circle-play sng-play" onclick="playSong()"></i>
+                                   <i class="fa-regular fa-heart sng-like"></i>
+                                   <i class="fa-solid fa-ellipsis sng-opt"></i>     
+                              </span>
+                              <span class="list-ele list-items">
+                                   <span for="list">List</span>
+                                   <i class="fa-solid fa-list sng-list" id="list"></i>
+                              </span>
+                          </div>
+                        </div>
+                        <div class="content-spacing">
+                          <div class="sng-content">
+                               <div class="sng-title">
+                                    <span>
+                                         <span class="has">#</span>
+                                         <span>Title</span>
+                                    </span>
+                                    <span><i class="fa-regular fa-clock"></i></span>
+                               </div>
+                               <div class="t-line"></div>
+                          </div>
+                          <div class="songs">
+                              <span class="sng-no">
+                                   <span class="play-sym">
+                                        <span class="sng-number one">1</span>                
+                                        <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                  </span>
+                                  <span class="sng-artist-info">
+                                       <span class="sng">The Confession</span>
+                                       <br>
+                                       <span class="manan-art">Dilijit Dosanjh</span>
+                                       <span class="bhupi-art">, thiarajxtt</span>
+                                  </span>    
+                              </span>
+                              <span class="sng-time-info">
+                                   <i class="fa-regular fa-heart sng-fav"></i>
+                                   <span class="sng-time">0:48</span>
+                                   <i class="fa-solid fa-ellipsis more-options"></i>          
+                              </span>
+                          </div>
+                          <div class="songs">
+                              <span class="sng-no">
+                                   <span class="play-sym">
+                                        <span class="sng-number ">2</span>                
+                                        <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                  </span>
+                                  <span class="sng-artist-info">
+                                       <span class="sng">Ghost</span>
+                                       <br>
+                                       <span class="manan-art">Dilijit Dosanjh</span>
+                                       <span class="bhupi-art">, thiarajxtt</span>
+                                  </span>    
+                              </span>
+                              <span class="sng-time-info">
+                                   <i class="fa-regular fa-heart sng-fav"></i>
+                                   <span class="sng-time">2:45</span>
+                                   <i class="fa-solid fa-ellipsis more-options"></i>          
+                              </span>
+                          </div>
+                          <div class="songs">
+                              <span class="sng-no">
+                                   <span class="play-sym">
+                                        <span class="sng-number">3</span>                
+                                        <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                  </span>
+                                  <span class="sng-artist-info">
+                                       <span class="sng">Drowning</span>
+                                       <br>
+                                       <span class="manan-art">Dilijit Dosanjh</span>
+                                       <span class="bhupi-art">, thiarajxtt</span>
+                                       <span class="raj">, Hrmnn</span>
+                                  </span>    
+                              </span>
+                              <span class="sng-time-info">
+                                   <i class="fa-regular fa-heart sng-fav"></i>
+                                   <span class="sng-time">2:39</span>
+                                   <i class="fa-solid fa-ellipsis more-options"></i>          
+                              </span>
+                          </div>
+                          <div class="songs">
+                              <span class="sng-no">
+                                   <span class="play-sym">
+                                        <span class="sng-number">4</span>                
+                                        <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                  </span>
+                                  <span class="sng-artist-info">
+                                       <span class="sng">Amiri</span>
+                                       <br>
+                                       <span class="manan-art">Dilijit Dosanjh</span>
+                                       <span class="bhupi-art">, thiarajxtt</span>
+                                  </span>    
+                              </span>
+                              <span class="sng-time-info">
+                                   <i class="fa-regular fa-heart sng-fav"></i>
+                                   <span class="sng-time">1:57</span>
+                                   <i class="fa-solid fa-ellipsis more-options"></i>          
+                              </span>
+                          </div>
+                          <div class="songs">
+                              <span class="sng-no">
+                                   <span class="play-sym">
+                                        <span class="sng-number">5</span>                
+                                        <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                  </span>
+                                  <span class="sng-artist-info">
+                                       <span class="sng">Feel My Love</span>
+                                       <br>
+                                       <span class="manan-art">Dilijit Dosanjh</span>
+                                       <span class="bhupi-art">, Intense</span>
+                                  </span>    
+                              </span>
+                              <span class="sng-time-info">
+                                   <i class="fa-regular fa-heart sng-fav"></i>
+                                   <span class="sng-time">3:32</span>
+                                   <i class="fa-solid fa-ellipsis more-options"></i>          
+                              </span>
+                          </div>
+                          <div class="songs">
+                              <span class="sng-no">
+                                   <span class="play-sym">
+                                        <span class="sng-number">6</span>                
+                                        <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                  </span>
+                                  <span class="sng-artist-info">
+                                       <span class="sng">Kinni Kinni</span>
+                                       <br>
+                                       <span class="manan-art">Dilijit Dosanjh</span>
+                                       <span class="bhupi-art">, thiarajxtt</span>
+                                  </span>    
+                              </span>
+                              <span class="sng-time-info">
+                                   <i class="fa-regular fa-heart sng-fav"></i>
+                                   <span class="sng-time">3:33</span>
+                                   <i class="fa-solid fa-ellipsis more-options"></i>          
+                              </span>
+                          </div>
+                          <div class="songs">
+                              <span class="sng-no">
+                                   <span class="play-sym">
+                                        <span class="sng-number">7</span>                
+                                        <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                  </span>
+                                  <span class="sng-artist-info">
+                                       <span class="sng">Kehkashan</span>
+                                       <br>
+                                       <span class="manan-art">Dilijit Dosanjh</span>
+                                       <span class="bhupi-art">, thiarajxtt</span>
+                                  </span>    
+                              </span>
+                              <span class="sng-time-info">
+                                   <i class="fa-regular fa-heart sng-fav"></i>
+                                   <span class="sng-time">3:00</span>
+                                   <i class="fa-solid fa-ellipsis more-options"></i>          
+                              </span>
+                          </div>
+                          <div class="songs">
+                              <span class="sng-no">
+                                   <span class="play-sym">
+                                        <span class="sng-number">8</span>                
+                                        <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                  </span>
+                                  <span class="sng-artist-info">
+                                       <span class="sng">Daytona</span>
+                                       <br>
+                                       <span class="manan-art">Dilijit Dosanjh</span>
+                                       <span class="bhupi-art">, thiarajxtt</span>
+                                  </span>    
+                              </span>
+                              <span class="sng-time-info">
+                                   <i class="fa-regular fa-heart sng-fav"></i>
+                                   <span class="sng-time">3:00</span>
+                                   <i class="fa-solid fa-ellipsis more-options"></i>          
+                              </span>
+                          </div>
+                          <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number">9</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Poppin'</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, thiarajxtt</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">2:34</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">10</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Icon</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, thiarajxtt</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">2:28</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">11</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Enlightenment</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, thiarajxtt</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">0:36</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">12</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Stars</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, thiarajxtt</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">3:04</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">13</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Bad Habits</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, thiarajxtt</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">2:47</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">14</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Lalkara</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, Intense</span>
+                                     <span class="raj">, Sultaan</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">2:40</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">15</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Jatt Vailly</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, thiarajxtt</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">2:31</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">16</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Whatcha Doin'</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, thiarajxtt</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">2:17</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">17</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">case</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, Intense</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">2:15</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">18</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Cry Later</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, thiarajxtt</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">2:28</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">19</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Infinite Return</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, thiarajxtt</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">0:33</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">20</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Psychotic</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, thiarajxtt</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">4:35</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">21</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Midnight Desires</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, thiarajxtt</span>
+                                     <span class="raj">, Hrmnn</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">2:52</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                        <div class="songs">
+                            <span class="sng-no">
+                                 <span class="play-sym">
+                                      <span class="sng-number two">22</span>                
+                                      <i class="fa-solid fa-play sng-play-btn"></i>
+                                        <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                                </span>
+                                <span class="sng-artist-info">
+                                     <span class="sng">Serenade</span>
+                                     <br>
+                                     <span class="manan-art">Dilijit Dosanjh</span>
+                                     <span class="bhupi-art">, thiarajxtt</span>
+                                     <span class="raj">, Hrmnn</span>
+                                </span>    
+                            </span>
+                            <span class="sng-time-info">
+                                 <i class="fa-regular fa-heart sng-fav"></i>
+                                 <span class="sng-time">1:37</span>
+                                 <i class="fa-solid fa-ellipsis more-options"></i>          
+                            </span>
+                        </div>
+                          <div class="movie-info">
+                              <p style="font-size: 0.9rem;">September 29, 2023</p>
+                              <p style="font-size: 0.7rem;">© 2023 DILJIT DOSANJH</p>
+                              <p style="font-size: 0.7rem;">℗ 2023 DILJIT DOSANJH</p>
+                          </div>
+                       </div>        
+               </div>
+               <div class="ext-song">
+                  <div class="suggestion">
+                       <span>
+                            <h2>More By Dilijit Dosanjh</h2>
+                       </span>
+                       <span><p>See discography</p></span>
+                  </div>
+                  <div class="cards-container">
+                      <div class="card">
+                           <img src="./assets/ab67616d0000b273cb2f9520171129a3df7a241a.jpeg">
+                           <p class="card-title">Ghost</p>
+                           <p class="card-info">2023</p>
+                      </div>
+                      <div class="card">
+                           <img src="./assets/hass hass.jpeg">
+                           <p class="card-title">Hass Hass</p>
+                           <p class="card-info">2023</p>
+                      </div>
+                      <div class="card">
+                           <img src="./assets/drive thru.jpeg">
+                           <p class="card-title">Drive Thru</p>
+                           <p class="card-info">2022</p>
+                      </div>
+                      <div class="card">
+                           <img src="./assets/goat.jpeg">
+                           <p class="card-title">G.O.A.T</p>
+                           <p class="card-info">2020</p>
+                      </div>
+                      <div class="card">
+                           <img src="./assets/moonchild.jpeg">
+                           <p class="card-title">MoonChild Era</p>
+                           <p class="card-info">2021</p>
+                      </div>
+                 </div>
+               </div>
+           </div>
+                 <div class="footer">
+                      <div class="sec-footer">
+                           <div class="inner-box">
+                                <div class="btns-box">
+                                     <div class="comp">
+                                          <h4>Company</h4>
+                                          <button class="-btn">About</button><br>
+                                          <button class="-btn">Jobs</button><br>
+                                          <button class="-btn">For the Record</button><br>
+                                     </div>
+                                     <div class="comu">
+                                          <h4>Communities</h4>
+                                          <button class="-btn">For Artists</button><br>
+                                          <button class="-btn">Developers</button><br>
+                                          <button class="-btn">Advertising</button><br>
+                                          <button class="-btn">Investors</button><br>
+                                          <button class="-btn">Vendors</button><br>
+                                     </div>
+                                     <div class="links">
+                                          <h4>Useful links</h4>
+                                          <button class="-btn">Support</button><br>
+                                          <button class="-btn">Free Mobile App</button><br>
+                                     </div>
+                                </div>
+                                <div class="social">
+                                     <div class="social-icons"><i class="fa-brands fa-instagram"></i></div>
+                                     <div class="social-icons"><i class="fa-brands fa-twitter"></i></div>
+                                     <div class="social-icons"><i class="fa-brands fa-facebook"></i></div>
+                                </div>
+                           </div>
+                           <div class="line"></div>
+                           <div class="last-box">
+                                <div class="ftr-buttons">
+                                     <button class="ftr-btn">Legal</button>
+                                     <button class="ftr-btn">Privacy Center</button>
+                                     <button class="ftr-btn">Privacy Policy</button>
+                                     <button class="ftr-btn">Cookies</button>
+                                     <button class="ftr-btn">About Ads</button>
+                                     <button class="ftr-btn">Accessibility</button>
+                                 </div>
+                           <div class="year">
+                              <p class="cpy-btn">&copy; 2024 Spotify AB</p>
+                           </div>
+                           </div>     
+                      </div>     
+                 </div>
+         </div>       
+     </div>
+  <div class="music-player">
+     <div class="album">
+          <div class="album-elements">
+               <div class="picture">
+                    <img src="./assets/album_picture.jpeg" class="song-pic">
+               </div>
+               <div class="song">
+                    <p class="song-name">Daylight</p>
+                    <p class="singer-name">David Khushner</p>
+               </div>
+               <div class="album-btns">
+                    <img src="./assets/album_icon1.png" class="album-btn">
+               </div>
+          </div>
+     </div>
+     <div class="player">
+          <div class="player-controls">
+               <img src="./assets/player_icon1.png" class="player-control-icons">
+               <img src="./assets/player_icon2.png" class="player-control-icons" onclick="prevSong()">
+               <img src="./assets/player_icon3.png" class="player-control-icons play" id="play" onclick="playSong()">
+               <img src="./assets/pause.png" class="player-control-icons pause invi" id="pause" onclick="pauseSong()">
+               <img src="./assets/player_icon4.png" class="player-control-icons" onclick="nextSong()">
+               <img src="./assets/player_icon5.png" class="player-control-icons">
+          </div>
+          <div class="playback-bar">
+               <span class="curr-time">00:00</span>
+               <input type="range" min="0" max="100" step="1" class="progress-bar">
+               <span class="tot-time">3:33</span>
+          </div>
+     </div>
+     <div class="controls">
+          <div class="controls-icons">
+               <img src="./assets/controls_icon1.png" class="buttons">
+               <img src="./assets/controld_icon2.png" class="buttons">
+               <img src="./assets/controls_icon3.png" class="buttons third">
+               <img src="./assets/controls_icon4.png" class="buttons fourth">
+               <img src="./assets/controls_icon5.png" class="buttons">
+               <input type="range" min="0" max="1" value="0.5" step="0.1"  class="volume-bar" id="volume" oninput="changeVolume()">     
+          </div>
+     </div>
+  </div>
+ </div>
+ <script src="app.js"></script>
+</body>
+</html>
