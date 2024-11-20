@@ -87,24 +87,41 @@ Array.from(songsList).forEach((item, idx) => {
         }
     });
 });
-
+let extra;
 const songSrc = (idx) => {
     audio.src = songsList[idx].getAttribute("data-src");
+    Array.from(songsList).forEach((item, i) => {
+        if(item.getAttribute("data-src") === songsList[idx].getAttribute("data-src")){
+           extra = item;
+        }
+    });
 } 
 
 const playSong = () => {
     audio.play();
     play.classList.add("invi");
     pause.classList.remove("invi");
+    extra.childNodes[1].childNodes[1].childNodes[3].classList.add("invi");
+    extra.childNodes[1].childNodes[1].childNodes[5].classList.remove("invi");
+    extra.childNodes[1].childNodes[1].childNodes[1].style.color = "#1ed760";
+    extra.childNodes[1].childNodes[3].childNodes[1].style.color = "#1ed760";
 }
 
 const pauseSong = () => {
     audio.pause();
     play.classList.remove("invi");
     pause.classList.add("invi");
+    extra.childNodes[1].childNodes[1].childNodes[5].classList.add("invi");
+    extra.childNodes[1].childNodes[1].childNodes[3].classList.remove("invi");
+    extra.childNodes[1].childNodes[1].childNodes[1].style.color = "";
+    extra.childNodes[1].childNodes[3].childNodes[1].style.color = "";
 }
 
 let nextSong = () => {
+    extra.childNodes[1].childNodes[1].childNodes[5].classList.add("invi");
+    extra.childNodes[1].childNodes[1].childNodes[3].classList.remove("invi");
+    extra.childNodes[1].childNodes[1].childNodes[1].style.color = "";
+    extra.childNodes[1].childNodes[3].childNodes[1].style.color = "";
     if(curIdx === songsList.length -1){
         curIdx = 0;
     }else{
@@ -115,6 +132,10 @@ let nextSong = () => {
 }
 
 let prevSong = () => {
+    extra.childNodes[1].childNodes[1].childNodes[5].classList.add("invi");
+    extra.childNodes[1].childNodes[1].childNodes[3].classList.remove("invi");
+    extra.childNodes[1].childNodes[1].childNodes[1].style.color = "";
+    extra.childNodes[1].childNodes[3].childNodes[1].style.color = "";
     if(curIdx === 0){
         curIdx = songsList.length -1;
     }else{
