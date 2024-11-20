@@ -103,7 +103,7 @@ const playSong = () => {
     pause.classList.remove("invi");
     extra.childNodes[1].childNodes[1].childNodes[3].classList.add("invi");
     extra.childNodes[1].childNodes[1].childNodes[5].classList.remove("invi");
-    extra.childNodes[1].childNodes[1].childNodes[1].style.color = "#1ed760";
+    extra.childNodes[1].childNodes[1].childNodes[1].style.color = "black";
     extra.childNodes[1].childNodes[3].childNodes[1].style.color = "#1ed760";
 }
 
