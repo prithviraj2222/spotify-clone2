@@ -772,6 +772,56 @@ a{
     .sticky-nav-icons {
         margin-left: 1rem;
     }
+
+    ::-webkit-scrollbar {
+        width: 0;
+        position: relative;
+        left: -5rem;
+    }
+    
+    ::-webkit-scrollbar-track {
+       display: none;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        display: none;
+        background-color: rgb(255,255,255,0.3);
+    }
+
+    .sng-allinfo {
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .sng-allinfo .sng-info {
+        margin: -3rem 0.5rem 3rem 0;
+    }
+    
+    .songs .sng-time-info {
+        padding-right: 0;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .songs .sng-time-info .sng-time {
+        padding-right: 0;
+    }
+
+    .songs .sng-time-info i {
+        display: none;
+    }
+
+    .content-spacing .songs {
+        padding-right: 0;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .sng-content .sng-title{
+        padding: 0;
+    }
+
 }
 
 #remove-btn:hover {
