@@ -791,6 +791,7 @@ a{
     .sng-allinfo {
         flex-wrap: wrap;
         position: relative;
+        margin-left: 0.5rem;
     }
 
     .sng-allinfo .sng-info {
@@ -820,6 +821,23 @@ a{
 
     .sng-content .sng-title{
         padding: 0;
+    }
+
+    .options-ele {
+        margin-left: 0.5rem;
+    }
+
+    .content-spacing {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .suggestion {
+        margin-left: 0;
+    }
+
+    .sec-footer {
+        padding-left: 0.5rem;
     }
 
 }
