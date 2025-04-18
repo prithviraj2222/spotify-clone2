@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="./assets/spotify.png" rel="icon">
+  <title>Shree Hanuman Chalisa | Spotify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalnia&family=Montserrat:wght@300;400;500;600;700&family=Poppins&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+ <style>
+
+    .main-content {
+     background-image: linear-gradient(to bottom, #c93e1e, #121212 30%);
+     overflow: hidden;
+    }
+
+    .sticky-nav {
+        background-color: rgba(138,74,11,0.001);
+    }
+
+    .backward_icon {
+     opacity: 0.9;
+     color: #121212ee;
+     background-color: white;
+     font-size: 2.1rem;
+     border-radius: 50%;
+     cursor: pointer;
+    }
+
+    .fa-circle-chevron-right {
+     opacity: 0.55;
+     color: #121212ee;
+     background-color: white;
+     font-size: 2.1rem;
+     border-radius: 50%;
+     margin-left: 0.2rem;
+     cursor:not-allowed;
+    }
+
+    .sng-allinfo {
+     margin-left: 1.5rem;
+    }
+
+    .sng-pht {
+        height: 14.5rem;
+        width: 14.5rem;
+        border-radius: 0.3rem;
+        margin-top: 1.2rem;
+        transition: 0.2s;
+    }
+
+    .sng-pht:hover {
+     transform: scale(1.04);
+    }
+
+    .sng-info {
+        display: flex;
+        flex-flow: column;
+        flex: 1;
+        z-index: 0;
+        position: relative;
+        top: 3.5rem;
+        width: 47%;
+        margin-left: 1.4rem;
+        margin-top: 1.8rem;
+    }
+
+    .album {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+   .sng-name {
+    font-size: 6rem;
+    display: flex;
+    align-items: center;
+    height: 6rem;
+    margin-bottom: 1rem;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: bolder;
+   }
+
+   @media (max-width:1300px) {
+    .sng-name {
+        font-size: 4rem;
+        margin-bottom: 0rem;
+    }
+
+    .sng-pht {
+        height: 13rem;
+        width: 13rem;
+    }
+   }
+
+   @media (max-width:1211px) {
+    .sng-name {
+        font-size: 3.8rem;
+        margin-bottom: 0rem;
+    }
+
+    .album,.ext-info {
+     font-size: .8rem
+    }
+
+    .sng-pht {
+        height: 13rem;
+        width: 13rem;
+    }
+   }
+
+    .ext-info {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        margin-top: 0.2rem;
+    }
+
+    .ext-info a:hover {
+     text-decoration: underline white;
+    }
+
+    .singer-img {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    margin-right: 0.3rem;
+    margin-left: 0.2rem;
+   }
+
+   .singer-img img {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+   }
+
+    .dot {
+    padding: 0px 0.2rem;
+    }
+
+    .options {
+     margin-top: 1rem;
+     padding: 1.25rem;
+     padding-left: 0;
+     width: 100%;
+     align-items: center;
+    }
+
+    .options-ele {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin: 0 1.5rem 0 1.5rem;
+    }
+
+    .options-ele i,span {
+     cursor: pointer;
+    }
+
+    .sng-allinfo {
+     display: flex;
+    }
+
+    .sng-play {
+     font-size: 4rem;
+     padding-right: 1.8rem;
+     color: #1ed760;
+     opacity: 1;
+     transition: 0.2s;
+    }
+
+    .sng-play:hover {
+     transform: scale(1.06);
+    }
+
+    .sng-like {
+     font-size: 2rem;
+     padding-right: 1.6rem;
+     opacity: 0.8;
+    }
+     
+    .sng-opt {
+     font-size: 2rem;
+     opacity: 0.8;
+    }
+
+    .sng-list {
+     font-size: 1rem;
+     padding-left: 0.5rem;
+    }
+
+    .list-ele {
+     opacity: 0.8;
+     padding-right: 0.5rem;
+    }
+
+    .list-ele:hover {
+     opacity: 1;
+    }
+
+    .list-items {
+     display: flex;
+     align-items: center;
+    }
+
+    .sng-like:hover{
+     opacity: 1;
+    }
+    
+    .sng-opt:hover {
+     opacity: 1;
+    }
+
+    .has {
+     padding-right: 1rem;
+    }
+
+    .sng-content {
+     margin-bottom: 1.5rem;
+    }
+
+    .sng-title {
+     padding-left: 1.2rem;
+     padding-right: 3rem;
+     display: flex;
+     justify-content: space-between;
+     margin-top: 0.5rem;
+    }
+
+    .sng-title span {
+     font-size: 1rem;
+     opacity: 0.8;
+    }
+
+    .t-line {
+     width: 100%;
+    height: 1px;
+    border-top: 1px solid white;
+    opacity: 0.1;
+    margin-top: 0.3rem;
+    }
+
+    .content-spacing {
+     margin: 0 1.5rem 0 1.5rem;
+    }
+
+    .songs {
+     padding: 0.5rem;
+     padding-left: 0.7rem;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-left: 0.6rem;
+    }
+
+    .sng:hover {
+     text-decoration: underline white;
+    }
+
+    .manan-art {
+     font-size: 0.9rem;
+     opacity: 0.7;
+    }   
+
+    .manan-art:hover {
+     text-decoration: underline white;
+    }
+    
+    .bhupi-art,.raj {
+     font-size: 0.9rem;
+     opacity: 0.7;
+    }
+
+    .raj:hover {
+     text-decoration: underline white;
+    }
+
+    .bhupi-art:hover {
+     text-decoration: underline white;
+    }
+
+    .sng-artist-info {
+     padding-left: 0.6rem;
+    }
+
+    .sng-no {
+     display: flex;
+     align-items: center;
+    }
+
+    .sng-number {
+     opacity: 0.7;
+    }
+
+    .one {
+     padding-left: 0.15rem;
+    }
+
+    .play-sym {
+     width: 1.7rem;
+    }
+
+    .sng-play-btn {
+     opacity: 0;
+     cursor: auto;
+    }
+
+    .sng-time-info {
+     padding-right: 0.6rem;
+    }
+
+    .sng-fav {
+     opacity: 0;
+    }
+
+    .more-options {
+     opacity: 0;
+    }
+
+    .sng-time {
+     padding-right: 0.8rem;
+     padding-left: 1.5rem;
+     opacity: 0.7;
+     cursor: auto;
+    }
+
+    .songs:hover {
+     background-color: rgba(255, 255, 255, 0.108);
+     border-radius: 0.2rem;
+
+      .sng-fav {
+          opacity: 0.7;
+      }
+
+      .sng-fav:hover {
+          opacity: 1;
+      }
+
+      .more-options {
+          opacity: 1;
+      }
+
+      .sng-number {
+          display: none;
+      }
+
+      .sng-play-btn {
+          opacity: 1;
+          padding-right: 0.9rem;
+      }
+
+      .manan-art,.bhupi-art,.raj {
+          opacity: 1;
+      }
+
+    }
+
+    .movie-info {
+     opacity: 0.7;
+     margin-top: 2rem;
+    }
+
+    .movie-info p {
+     margin: 0;
+    }
+
+    .suggestion {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin: 2.5rem 1.5rem 0 1.5rem;
+    }
+
+    .suggestion span p {
+     font-size: 0.88rem;
+     opacity: 0.7;
+     font-weight: 600;
+    }
+
+    .suggestion span p:hover {
+     text-decoration: underline rgb(255, 255, 255,0.8);
+    }
+
+    .suggestion h2 {
+     margin: 0;
+     padding: 0;
+     font-size: 1.5rem;
+     opacity: 1;
+    }
+
+    .suggestion h2:hover {
+     text-decoration: underline white;
+    }
+
+    .back-clr {
+     background-image: linear-gradient(to bottom, rgb(0,0,0,0.12), #121212 60%);
+    }
+
+    @media (max-width: 600px){
+     .sng-name {
+          margin: 2rem 0;
+     }
+    }
+
+ </style>
+</head>
+<body>
+ <div class="main">
+     <div class="sidebar">
+          <div class="nav">
+               <div class="nav-option" style="opacity: 1;">
+                    <i class="fa-brands fa-spotify logo"></i><a href="#" class="name">Spotify</a><sup><i class="fa-regular fa-registered reg"></i></sup>
+               </div>
+               <div class="nav-option"  style="opacity: 1;">
+                    <a href="" class="home-page-btn">
+                         <i class="fa-solid fa-house"></i>
+                         <a href="index.html">Home</a>
+                    </a>
+               </div>
+               <div class="nav-option">
+                    <a href="" class="search-page-btn">
+                         <i class="fa-solid fa-magnifying-glass"></i>
+                         <a href="search.html">Search</a>     
+                    </a>
+               </div>
+           </div>
+           <div class="library">
+               <div class="option">
+                <div class="lib-option nav-option">
+                     <img src="./assets/library_icon.png">
+                    <a href="#">Your Liabrary</a>
+                </div>
+                <div class="icons">
+                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+               </div>
+               <div class="boxes">
+                <div class="box">
+                    <p class="para1">Create your first playlist</p>
+                    <p class="para2">It's easy, we'll help you</p>
+                    <button class="badge">Create playlist</button>
+                </div>
+                <div class="box">
+                    <p class="para1">Let's find some podcasts to follow</p>
+                    <p class="para2">We'll keep you updated on new episodes</p>
+                    <button class="badge">Browse podcasts</button>
+                </div>
+               </div>
+               <div class="lib-buttons">
+                    <button class="lib-btns">Legal</button>
+                    <button class="lib-btns">Privacy Center</button>
+                    <button class="lib-btns">Privacy Policy</button>
+                    <button class="lib-btns">Cookies</button>
+                    <button class="lib-btns">About Ads</button>
+                    <button class="lib-btns">Accessibility</button>
+                    <button class="lib-btns">Cookies</button>
+                </div>
+                <div class="lib-btn">
+                    <button class="lang-btn">
+                         <i class="fa-solid fa-globe"></i> English
+                    </button>
+                </div>
+           </div>
+     </div>
+  <div class="background">
+     <div class="main-content">
+          <div class="section">
+               <div class="head">
+                   <div class="sticky-nav">
+                       <div class="sticky-nav-icons">
+                         <a href="index.html"><i class="fa-solid fa-circle-chevron-left backward_icon"></i></a>
+                         <i class="fa-solid fa-circle-chevron-right hide"></i>
+                       </div>
+                       <div class="sticky-nav-options">
+                            <button class="badge nav-items hide">Explore Premium</button>
+                            <button class="badge nav-items dark-badge"><i class="fa-regular fa-circle-down"></i> Install App</button>
+                            <i class="fa-regular fa-user nav-items"></i>
+                       </div>
+                  </div>
+                  <div class="sng-allinfo">
+                       <span class="sng-img">
+                           <img src="./assets/ab67616d00001e02715788d66c1a599e3318b32aab67616d00001e02716fc8baed5c837d29333e02ab67616d00001e02a05d3035e4d3c7c1460e473cab67616d00001e02c65eb44f9039e006247ef8f7.png" class="sng-pht">
+                       </span>
+                      <span class="sng-info">
+                        <span class="album">Public Playlist</span>
+                        <span class="sng-name">Bholenath🙏</span>
+                         <div class="ext-info">
+                            <a href="#">All Artists</a>
+                            <span class="dot">.
+                               <span>24 songs, 1 hr 44 min</span>
+                            </span>
+                         </div>
+                      </span>    
+                  </div>
+               </div>
+              <div class="back-clr">
+               <div class="options">
+                    <div class="options-ele">
+                         <span class="list-items">
+                              <i class="fa-solid fa-circle-play sng-play" onclick="playSong()"></i>
+                              <i class="fa-regular fa-heart sng-like"></i>
+                              <i class="fa-solid fa-ellipsis sng-opt"></i>     
+                         </span>
+                         <span class="list-ele list-items">
+                              <span for="list">List</span>
+                              <i class="fa-solid fa-list sng-list" id="list"></i>
+                         </span>
+                     </div>
+                   </div>
+                   <div class="content-spacing">
+                     <div class="sng-content">
+                          <div class="sng-title">
+                               <span>
+                                    <span class="has">#</span>
+                                    <span>Title</span>
+                               </span>
+                               <span><i class="fa-regular fa-clock"></i></span>
+                          </div>
+                          <div class="t-line"></div>
+                     </div>
+                     <div class="songs" data-src="./assets/songs/Shiv sama rahe - 64Kbps-(Mr-Jat.in).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">1</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Shiv Sama Rahe</span><br>
+                                <span class="manan-art">Hansraj Raghuwanshi</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">5:33</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/01 - Namo Namo - Kedarnath (2018).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">2</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Namo Namo</span><br>
+                                <span class="manan-art">Amit Trivedi</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">5:22</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/128-Mere Baba - Jubin Nautiyal 128 Kbps.mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">3</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Mere Baba</span><br>
+                                <span class="manan-art">Jubin Nautiyal</span>, 
+                                <span class="bhupi-art">Payal Dev</span>, 
+                                <span class="raj">Manoj Muntashir</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">4:01</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Parvati Boli Shankar Se Hansraj Raghuwanshi 128 Kbps.mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">4</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Parvati Boli Shankar Se</span><br>
+                                <span class="manan-art">Hansraj Raghuwanshi</span>, 
+                                <span class="bhupi-art">Bharat Kamal</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">7:19</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Main Shiv Ka Shiv Mere-(golumusic.com).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">5</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Main Shiv Ka Shiv Mere</span><br>
+                                <span class="manan-art">Hansraj Raghuwanshi</span>, 
+                                <span class="bhupi-art">Raviraj</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">4:54</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Deva Deva (Film Version) - Brahmastra 128 Kbps.mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">6</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Deva Deva (From "Brahmastra")</span><br>
+                                <span class="manan-art">Pritam</span>, 
+                                <span class="bhupi-art">Arijit Singh</span>, 
+                                <span class="raj">Amitabh Bhattacharya</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">4:39</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Laagi Lagan Shankara - Hansraj Raghuwanshi 128 Kbps.mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">7</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Laagi Lagan Shankara - Hindi</span><br>
+                                <span class="manan-art">Hansraj Raghuwanshi</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:56</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Mera Bhola Hai Bhandari Hindi Shiv Bhajan 128 Kbps.mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">8</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Mera Bhola Hai Bhandari</span><br>
+                                <span class="manan-art">Hansraj Raghuwanshi</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">6:52</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    <div class="songs" data-src="./assets/songs/Shiv_kailasho_ke_Vasi____Official_Music_Video____Hansraj_Raghuwanshi____Baba_Ji(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">9</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Shiv Kailasho Ke Vasi</span><br>
+                                <span class="manan-art">Hansraj Raghuwanshi</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">5:06</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Shambu_Mere_Sang__Full_Video__Hansraj_Raghuwanshi___Mista_Baaz__Latest_Songs_2022___Bhole_Baba_Song(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">10</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Shambu Mere Sang</span><br>
+                                <span class="manan-art">Hansraj Raghuwanshi, Mista Baaz</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:24</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Mere_Bhole_Nath__Lyrical__Jubin_Nautiyal___Payal_Dev%2C_Vishal_Bagh___Devotional_Song___Bhushan_Kumar(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">11</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Mere Bhole Nath</span><br>
+                                <span class="manan-art">Jubin Nautiyal</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:24</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Mera_Maalik_Hai_Shivay_Slowed___Reverb_Audio_Version____Krishna_Chaturvedi_%2C_Pankaj_VRK__Viral_Song(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">12</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Mera Maalik Hai Shivaay</span><br>
+                                <span class="manan-art">Pankaj VRK, Krishna Chaturvedi</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:25</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Babam Bam - Paradox 128 Kbps.mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">13</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Babam Bam</span><br>
+                                <span class="manan-art">Paradox</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:18</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Manzil_Kedarnath____Abhilipsa_Panda___Jeetu_Sharma___mere_hath_me_tera_hath_ho___new_shiv_song_2022(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">14</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Manzil Kedarnath</span><br>
+                                <span class="manan-art">Jeetu Sharma, Abhilipsa Panda</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">4:04</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/_Bhagwan_Hai_Kahan_Re_Tu__FULL_AUDIO_Song___PK___Aamir_Khan___Anushka_Sharma___T-series(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">15</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Bhagwaan Hai Kahan Re Tu</span><br>
+                                <span class="manan-art">Sonu Nigam</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">5:11</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Devo_Ke_Dev_Mahadev(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">16</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Devo Ke Dev Mahadev</span><br>
+                                <span class="manan-art">Akki Kalyan</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">2:50</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    <div class="songs" data-src="./assets/songs/Oonchi_Oonchi_Waadi___Akshay_Kumar%2C_Pankaj_Tripathi%2C_Yami_G___Hansraj_Raghuwanshi___OMG_2___Lyrical(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">17</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Oonchi Oonchi Waadi</span><br>
+                                <span class="manan-art">Hansraj Raghuwanshi, Raahi, Djstrings</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:58</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/बेटा_हु_महाकाल_का_Bhole_Baba_Mere_Hai_Main_Beta_Hu_Mahakal_baba_#Ujjain_beta_hun_Mahakal_ka_DJ_remix(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">18</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Beta Hu Mahakal Ka</span><br>
+                                <span class="manan-art">Nitin Bagwan</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">5:25</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Jai_Jai_Mahakaal___Shiva_Song___Sonam_Choudhary___Official_Video___Rahul_VK___iSur_Studios(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">19</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Jai Jai Mahakaal</span><br>
+                                <span class="manan-art">Sonam Chaudhary</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:33</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/O_Bhole(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">20</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">O Bhole</span><br>
+                                <span class="manan-art">Akki Kalyan</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:26</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Himalay_Ka_Kan_Kan_Khila(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">21</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Himalay Ka Kan Kan Khila</span><br>
+                                <span class="manan-art">Tanushree Karmakar</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:00</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Shiv_Bhajan__Tu_Door_Na_Hona_Shambhu__with_Lyrics___Krishna_Chaturvedi(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">22</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Door Na Hona Shambhu</span><br>
+                                <span class="manan-art">Krishna Chaturvedi, Pankaj VRK</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:06</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/Shish_Nawata_Hoon__Song____Uttarakhand_Anthem___Jubin_Nautiyal___Payal_Dev___Aditya_Dev(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">23</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Shish Nawata Hoon</span><br>
+                                <span class="manan-art">Jubin Nautiyal, Payal Dev</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">3:52</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>
+                    
+                    <div class="songs" data-src="./assets/songs/BHALA_-_Kya_Wo_Karega_Leke_Chadhawa_-_Vinay_Katoch_ft_Vineet_Katoch___Shiva_Album___Lyrical_video(128kbps).mp3">
+                        <span class="sng-no">
+                            <span class="play-sym">
+                                <span class="sng-number">24</span>
+                                <i class="fa-solid fa-play sng-play-btn"></i>
+                                <i class="fa-solid fa-pause snd-pause-btn sng-play-btn invi"></i>
+                            </span>
+                            <span class="sng-artist-info">
+                                <span class="sng">Bhala</span><br>
+                                <span class="manan-art">Vinay Katoch</span>
+                            </span>
+                        </span>
+                        <span class="sng-time-info">
+                            <i class="fa-regular fa-heart sng-fav"></i>
+                            <span class="sng-time">5:56</span>
+                            <i class="fa-solid fa-ellipsis more-options"></i>
+                        </span>
+                    </div>                                        
+                    
+                     <div class="movie-info">
+                         <p style="font-size: 0.9rem;">January 1, 1992</p>
+                         <p style="font-size: 0.7rem;">© 1992 Super Cassettes Industries Private Limited</p>
+                         <p style="font-size: 0.7rem;">℗ 1992 Super Cassettes Industries Private Limited</p>
+                     </div>
+                  </div>
+              </div>
+               <div class="ext-song">
+                  <div class="suggestion">
+                       <span>
+                            <h2>More By hariharan</h2>
+                       </span>
+                       <span><p>See discography</p></span>
+                  </div>
+                  <div class="cards-container">
+                      <div class="card">
+                           <img src="./assets/leo.jpeg">
+                           <p class="card-title">Leo</p>
+                           <p class="card-info">2024</p>
+                      </div>
+                      <div class="card">
+                           <img src="./assets/ab67616d0000b2731a8c4618eda885a406958dd0.jpeg">
+                           <p class="card-title">Still Rollin</p>
+                           <p class="card-info">2023</p>
+                      </div>
+                      <div class="card">
+                           <img src="./assets/one love.jpeg">
+                           <p class="card-title">One Love</p>
+                           <p class="card-info">2023</p>
+                      </div>
+                      <div class="card">
+                           <img src="./assets/baller.jpeg">
+                           <p class="card-title">Baller</p>
+                           <p class="card-info">2022</p>
+                      </div>
+                      <div class="card">
+                           <img src="./assets/no love.jpeg">
+                           <p class="card-title">No Love</p>
+                           <p class="card-info">2022</p>
+                      </div>
+                 </div>
+               </div>
+           </div>
+                 <div class="footer">
+                      <div class="sec-footer">
+                           <div class="inner-box">
+                                <div class="btns-box">
+                                     <div class="comp">
+                                          <h4>Company</h4>
+                                          <button class="-btn">About</button><br>
+                                          <button class="-btn">Jobs</button><br>
+                                          <button class="-btn">For the Record</button><br>
+                                     </div>
+                                     <div class="comu">
+                                          <h4>Communities</h4>
+                                          <button class="-btn">For Artists</button><br>
+                                          <button class="-btn">Developers</button><br>
+                                          <button class="-btn">Advertising</button><br>
+                                          <button class="-btn">Investors</button><br>
+                                          <button class="-btn">Vendors</button><br>
+                                     </div>
+                                     <div class="links">
+                                          <h4>Useful links</h4>
+                                          <button class="-btn">Support</button><br>
+                                          <button class="-btn">Free Mobile App</button><br>
+                                     </div>
+                                </div>
+                                <div class="social">
+                                     <div class="social-icons"><i class="fa-brands fa-instagram"></i></div>
+                                     <div class="social-icons"><i class="fa-brands fa-twitter"></i></div>
+                                     <div class="social-icons"><i class="fa-brands fa-facebook"></i></div>
+                                </div>
+                           </div>
+                           <div class="line"></div>
+                           <div class="last-box">
+                                <div class="ftr-buttons">
+                                     <button class="ftr-btn">Legal</button>
+                                     <button class="ftr-btn">Privacy Center</button>
+                                     <button class="ftr-btn">Privacy Policy</button>
+                                     <button class="ftr-btn">Cookies</button>
+                                     <button class="ftr-btn">About Ads</button>
+                                     <button class="ftr-btn">Accessibility</button>
+                                 </div>
+                           <div class="year">
+                              <p class="cpy-btn">&copy; 2024 Spotify AB</p>
+                           </div>
+                           </div>     
+                      </div>     
+                 </div>
+         </div>       
+     </div>
+  <div class="music-player">
+     <div class="album">
+          <div class="album-elements">
+               <div class="picture">
+                    <img src="./assets/album_picture.jpeg" class="song-pic">
+               </div>
+               <div class="song">
+                    <p class="song-name">Daylight</p>
+                    <p class="singer-name">David Khushner</p>
+               </div>
+               <div class="album-btns">
+                    <img src="./assets/album_icon1.png" class="album-btn">
+               </div>
+          </div>
+     </div>
+     <div class="player">
+          <div class="player-controls">
+               <img src="./assets/player_icon1.png" class="player-control-icons">
+               <img src="./assets/player_icon2.png" class="player-control-icons" onclick="prevSong()">
+               <img src="./assets/player_icon3.png" class="player-control-icons play" id="play" onclick="playSong()">
+               <img src="./assets/pause.png" class="player-control-icons pause invi" id="pause" onclick="pauseSong()">
+               <img src="./assets/player_icon4.png" class="player-control-icons" onclick="nextSong()">
+               <img src="./assets/player_icon5.png" class="player-control-icons">
+          </div>
+          <div class="playback-bar">
+               <span class="curr-time">00:00</span>
+               <input type="range" min="0" max="100" step="1" class="progress-bar">
+               <span class="tot-time">3:33</span>
+          </div>
+     </div>
+     <div class="controls">
+          <div class="controls-icons">
+               <img src="./assets/controls_icon1.png" class="buttons">
+               <img src="./assets/controld_icon2.png" class="buttons">
+               <img src="./assets/controls_icon3.png" class="buttons third">
+               <img src="./assets/controls_icon4.png" class="buttons fourth">
+               <img src="./assets/controls_icon5.png" class="buttons">
+               <input type="range" min="0" max="1" value="0.5" step="0.1"  class="volume-bar" id="volume" oninput="changeVolume()">     
+          </div>
+     </div>
+  </div>
+  <div class="mbl-bts-box">
+     <spna class="mbl-ftr-btn  mbl-ftr-btn-ed selected-btn">
+          <i class="fa-solid fa-house"></i>
+          <p>Home</p>
+     </spna>
+     <a href="" class="mbl-ftr-btn mbl-ftr-btn-ed search-page-btn">     
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <p>Search</p>
+     </a>
+     <spna class="mbl-ftr-btn mbl-ftr-btn-ed" id="mbl-lib-btn">     
+          <img src="./assets/library_icon.png">
+          <p>Your Library</p>
+     </spna>
+     <spna class="mbl-ftr-btn mbl-ftr-btn-ed">     
+          <i class="fa-brands fa-spotify logo"></i>
+          <p> Premium</p>
+     </spna>
+  </div>
+ </div>
+ <script src="app.js"></script>
+</body>
+</html>
